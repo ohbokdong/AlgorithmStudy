@@ -17,8 +17,8 @@
 
 * **학습 내용**
   * **1회차(2020-12-13) - 2. 문제해결 전략**
-    * [younggeun0]()
-    * [minj0i]()
+    * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week1/younggeun0.md)
+    * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week1/minj0i.md)
   * **2회차(2020-?) - 3. 코딩과 디버깅**
     * [younggeun0]()
     * [minj0i]()
