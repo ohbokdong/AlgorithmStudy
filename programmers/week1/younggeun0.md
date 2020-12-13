@@ -50,6 +50,12 @@ function getBinaryNum(num, n) {
 
 ## 인상깊은 다른사람 풀이
 
+* map을 이용, arr1의 아이템과 index를 바로 전달
+  * arr2의 아이템과 arr1의 아이템(v)를 OR 연산(|)
+  * 연산 결과를 바로 이진화(toString(2))
+  * addZero함수에서 repeat함수를 사용, 앞에 부족한 '0' 추가
+  * 이진수를 replace함수를 사용하여 전역으로 1,0값을 '#', ' '로 치환
+
 ```javascript
 function solution(n, arr1, arr2) {
     return arr1.map((v, i) => addZero(n, (v | arr2[i]).toString(2)).replace(/1|0/g, a => +a ? '#' : ' '));
@@ -64,6 +70,20 @@ const addZero = (n, s) => {
 ```
 
 ## **추가로 배운 JS api**
+
+* [replace](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+  * 어떤 패턴에 일치하는 일부 또는 모든 부분이 교체된 새로운 문자열을 반환
+  * 패턴은 문자열이나 정규식(RegExp)이 될 수 있으며, 교체 문자열은 문자열이나 모든 매치에 대해서 호출된 함수일 수 있음
+
+```js
+const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+const regex = /dog/gi;
+
+console.log(p.replace(regex, 'ferret'));
+// expected output: "The quick brown fox jumps over the lazy ferret. If the ferret reacted, was it really lazy?"
+console.log(p.replace('dog', 'monkey'));
+// expected output: "The quick brown fox jumps over the lazy monkey. If the dog reacted, was it really lazy?"
+```
 
 * [map](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
   * 배열 내 모든 요소 각각에 대해 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환
