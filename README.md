@@ -19,6 +19,12 @@
   * **1회차(2020-12-13) - 2. 문제해결 전략**
     * [minj0i(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week1/minj0i.md)
     * [younggeun0(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week1/younggeun0.md)
+    * [프로그래머스 문제풀이 - 2018 KAKAO BLIND RECRUITMENT(비밀지도)](https://programmers.co.kr/learn/courses/30/lessons/17681)
+      * [younggeun0]()
+      * [minj0i]()
+      * [sgmsgood]()
+      * [rlawjddbs]()
+      * [ch.choi]()
   * **2회차(2020-?) - 3. 코딩과 디버깅**
     * [younggeun0(정)]()
     * [minj0i(부)]()
