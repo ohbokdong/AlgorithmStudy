@@ -32,3 +32,17 @@ function solution(n, arr1, arr2) {
     return answer;
 }
 ```
+
+## 인상깊은 다른사람 풀이
+```JAVASCRIPT
+function solution(n, arr1, arr2) {
+    return arr1.map((v, i) => addZero(n, (v | arr2[i]).toString(2)).replace(/1|0/g, a => +a ? '#' : ' '));
+}
+
+const addZero = (n, s) => {
+    return '0'.repeat(n - s.length) + s;
+}
+```
+- for문 대신 map사용
+- if else 대신 삼항연산자
+- 화살표연산자 활용
