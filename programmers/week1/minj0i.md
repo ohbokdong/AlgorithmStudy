@@ -16,7 +16,7 @@ function solution(n, arr1, arr2) {
         biArr2.push(bi2)
     }
     
-    // 비교해서 둘다 1이면 '#'아니면 ' '
+    // 비교해서 둘 중 하나라도 1이면 '#'아니면 ' '
     for(var i=0; i<n; i++) {
         var answerText = '';
         for(var j=0; j<n; j++) {
