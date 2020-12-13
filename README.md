@@ -24,7 +24,7 @@
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week1/minj0i.md)
       * [sgmsgood]()
       * [rlawjddbs]()
-      * [ch.choi]()
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week1/ch.choi.md)
   * **2회차(2020-?) - 3. 코딩과 디버깅**
     * [younggeun0(정)]()
     * [minj0i(부)]()
