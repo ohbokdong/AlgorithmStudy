@@ -20,7 +20,7 @@
     * [minj0i(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week1/minj0i.md)
     * [younggeun0(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week1/younggeun0.md)
     * [프로그래머스 문제풀이 - 2018 KAKAO BLIND RECRUITMENT(비밀지도)](https://programmers.co.kr/learn/courses/30/lessons/17681)
-      * [younggeun0]()
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week1/younggeun0.md)
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week1/minj0i.md)
       * [sgmsgood]()
       * [rlawjddbs]()
