@@ -46,3 +46,5 @@ const addZero = (n, s) => {
 - for문 대신 map사용
 - if else 대신 삼항연산자
 - 화살표연산자 활용
+- 정규식활용
+- repeat 함수 활용
