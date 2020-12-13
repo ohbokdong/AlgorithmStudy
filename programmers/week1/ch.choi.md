@@ -1,4 +1,4 @@
-# [1차] 다트게임 문제풀이
+# [1차] 비밀지도 문제풀이
 ```c++
 #include <vector>
 #include <string>
