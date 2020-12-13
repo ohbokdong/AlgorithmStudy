@@ -17,47 +17,47 @@
 
 * **학습 내용**
   * **1회차(2020-12-13) - 2. 문제해결 전략**
-    * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week1/younggeun0.md)
-    * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week1/minj0i.md)
+    * [minj0i(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week1/minj0i.md)
+    * [younggeun0(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week1/younggeun0.md)
   * **2회차(2020-?) - 3. 코딩과 디버깅**
-    * [younggeun0]()
-    * [minj0i]()
+    * [younggeun0(정)]()
+    * [minj0i(부)]()
   * **3회차(2020-?) - 4. 알고리즘의 시간 복잡도 분석**
-    * [rlawjddbs]()
-    * [sgmsgood]()
+    * [sgmsgood(정)]()
+    * [rlawjddbs(부)]()
   * **4회차(2020-?) - 6. 무식하게 풀기**
-    * [sgmsgood]()
-    * [ch.choi]()
+    * [ch.choi(정)]()
+    * [sgmsgood(부)]()
   * **5회차(2020-?) - 7. 분할 정복**
-    * [rlawjddbs]()
-    * [ch.choi]()
+    * [rlawjddbs(정)]()
+    * [ch.choi(부)]()
   * **6회차(2020-?) - 8. 동적 계획법**
-    * [younggeun0]()
-    * [minj0i]()
+    * [minj0i(정)]()
+    * [younggeun0(부)]()
   * **7회차(2020-?) - 18. 선형 자료 구조**
-    * [younggeun0]()
-    * [minj0i]()
+    * [younggeun0(정)]()
+    * [minj0i(부)]()
   * **8회차(2020-?) - 19. 큐와 스택, 데크**
-    * [rlawjddbs]()
-    * [sgmsgood]()
+    * [sgmsgood(정)]()
+    * [rlawjddbs(부)]()
   * **9회차(2020-?) - 21. 트리의 구현과 순회**
-    * [sgmsgood]()
-    * [ch.choi]()    
+    * [ch.choi(정)]()    
+    * [sgmsgood(부)]()
   * **10회차(2020-?) - 22. 이진 검색 트리**
-    * [rlawjddbs]()
-    * [ch.choi]()    
+    * [rlawjddbs(정)]()
+    * [ch.choi(부)]()    
   * **11회차(2020-?) - 23. 우선순위 큐와 힙**
-    * [younggeun0]()
-    * [minj0i]()
+    * [minj0i(정)]()
+    * [younggeun0(부)]()
   * **12회차(2020-?) - 27. 그래프의 표현과 정의**
-    * [younggeun0]()
-    * [minj0i]()
+    * [younggeun0(정)]()
+    * [minj0i(부)]()
   * **13회차(2020-?) - 그28. 래프의 깊이 우선 탐색**
-    * [rlawjddbs]()
-    * [sgmsgood]()
+    * [sgmsgood(정)]()
+    * [rlawjddbs(부)]()
   * **14회차(2020-?) - 29. 그래프의 너비 우선 탐색**
-    * [sgmsgood]()
-    * [ch.choi]()    
+    * [ch.choi(정)]()    
+    * [sgmsgood(부)]()
   * **15회차(2020-?) - 30. 최단 경로 알고리즘**
-    * [rlawjddbs]()
-    * [ch.choi]()    
+    * [rlawjddbs(정)]()
+    * [ch.choi(부)]()    
