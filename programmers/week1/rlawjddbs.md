@@ -1,4 +1,5 @@
 # [1차] 비밀지도 문제풀이
+- 중간에 `toCharArray()`로 순환문 돌리는 대신 `replaceAll()`을 쓰는게 원래 생각하던 방향과 맞았을 듯
 ```java
 class Solution {
     public String[] solution(int n, int[] arr1, int[] arr2) {
