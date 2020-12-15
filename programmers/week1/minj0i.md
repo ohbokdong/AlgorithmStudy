@@ -16,7 +16,7 @@ function solution(n, arr1, arr2) {
         biArr2.push(bi2)
     }
     
-    // 비교해서 둘다 1이면 '#'아니면 ' '
+    // 비교해서 둘 중 하나라도 1이면 '#'아니면 ' '
     for(var i=0; i<n; i++) {
         var answerText = '';
         for(var j=0; j<n; j++) {
@@ -46,3 +46,5 @@ const addZero = (n, s) => {
 - for문 대신 map사용
 - if else 대신 삼항연산자
 - 화살표연산자 활용
+- 정규식활용
+- repeat 함수 활용
