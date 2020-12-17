@@ -7,7 +7,7 @@ class Solution {
 
         for(int i = 0; i < n; i++) {
 
-            // [1]. 비트 연산 후 변의 길이(n)에 맞춰 문자열 자리수 설정
+            // 비트 연산 후 변의 길이(n)에 맞춰 문자열 자리수 설정
             String strBin = String.format("%"+ n + "s", Integer.toBinaryString(arr1[i] | arr2[i])).replace(" ", "0");
             String wallOrSpace = ""; // 지도의 1열에 해당되는 문자열
 
