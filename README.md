@@ -22,12 +22,12 @@
     * [프로그래머스 문제풀이 - 2018 KAKAO BLIND RECRUITMENT(비밀지도)](https://programmers.co.kr/learn/courses/30/lessons/17681)
       * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week1/younggeun0.md)
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week1/minj0i.md)
-      * [sgmsgood]()
-      * [rlawjddbs]()
+      * [sgmsgood](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week1/sgmsgood.md)
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week1/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week1/ch.choi.md)
-  * **2회차(2020-?) - 3. 코딩과 디버깅**
-    * [younggeun0(정)]()
-    * [minj0i(부)]()
+  * **2회차(2020-12-20) - 3. 코딩과 디버깅**
+    * [younggeun0(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week2/younggeun0.md)
+    * [minj0i(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week2/minj0i.md)
   * **3회차(2020-?) - 4. 알고리즘의 시간 복잡도 분석**
     * [sgmsgood(정)]()
     * [rlawjddbs(부)]()

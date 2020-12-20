@@ -6,9 +6,12 @@ class Solution {
         String[] result = new String[n];
 
         for(int i = 0; i < n; i++) {
-            String strBin = String.format("%"+ n + "s", Integer.toBinaryString(arr1[i] | arr2[i])).replace(" ", "0");
-            String wallOrSpace = "";
 
+            // 비트 연산 후 변의 길이(n)에 맞춰 문자열 자리수 설정
+            String strBin = String.format("%"+ n + "s", Integer.toBinaryString(arr1[i] | arr2[i])).replace(" ", "0");
+            String wallOrSpace = ""; // 지도의 1열에 해당되는 문자열
+
+            // 굳이 순환문을? - replaceAll() 두번으로 해결 가능했음
             for(char bin : strBin.toCharArray()) {
                 switch (bin) {
                 case '0':
@@ -53,6 +56,7 @@ class Solution {
                 }
             }
 
+            // 각 열에 보물 위치 저장
             result[i] = wallOrSpace;
         }
 
@@ -62,7 +66,7 @@ class Solution {
 ```
 
 ## 인상깊은 다른 사람 풀이
-- 좋아요 가장 많이 받은 소스... 이긴 한데 GC가 많이 돌아서 출력 속도가 느리다는 리뷰가 있음
+- 자바 풀이 중 좋아요 가장 많이 받은 소스... 이긴 한데 GC가 많이 돌아서 출력 속도가 느리다는 리뷰가 있음
 ```java
 class Solution {
   public String[] solution(int n, int[] arr1, int[] arr2) {
