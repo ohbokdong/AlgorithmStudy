@@ -74,7 +74,7 @@ var getMonthName = function(month) {
 const months[] = ["Jan", "Fe", ... "Dec"];
 ```
 
-### 3.2 자주 하는 실수
+### 3.3 자주 하는 실수
 
 #### 산술 오버플로
 
