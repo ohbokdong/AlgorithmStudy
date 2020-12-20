@@ -17,7 +17,37 @@ class Solution {
                 case '1':
                     wallOrSpace += "#";
                     break;
-                default :
+                default:
+                    wallOrSpace += " ";
+                    break;
+                }
+            }
+
+            result[i] = wallOrSpace;
+        }
+
+        return result;
+    }
+}
+```
+
+# [보충] - 팀원의 의견을 반영하여 수정해본 풀이
+```java
+class Solution {
+    public String[] solution(int n, int[] arr1, int[] arr2) {
+        String[] result = new String[n];
+
+        for(int i = 0; i < n; i++) {
+            // 아래 for문을 통해 단일 케이스("1"일 때 "#" 변환)에만 대응하면 되므로 replace 쓰지 않아도 됨
+            String strBin = String.format("%"+ n + "s", Integer.toBinaryString(arr1[i] | arr2[i]));
+            String wallOrSpace = "";
+
+            for(char bin : strBin.toCharArray()) {
+                switch (bin) {
+                case '1':
+                    wallOrSpace += "#";
+                    break;
+                default: // 예외 처리를 위해 default 문을 작성하는 것이 정석
                     wallOrSpace += " ";
                     break;
                 }
