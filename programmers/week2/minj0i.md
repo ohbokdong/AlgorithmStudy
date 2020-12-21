@@ -182,3 +182,50 @@ class Solution {
 정확성: 88.9
 합계: 88.9 / 100.0
 ```
+
+- 안되는데 왜 안되는지 모르겠어서 compareTo같은건 갖다버리고 그냥 for문 돌려서 직접 비교하는 거로 바꿔봄
+```JAVA
+class Solution {
+    public int[] solution(int N, int[] stages) {
+        int[] answer = new int[N];
+        double[] rates = new double[N];
+        
+        for(int i=1; i<=N; i++) {
+            // 도달한 사람, 패스한 사람
+            int count = 0;
+            int pass = 0;
+            
+            for(int stage: stages) {
+                if (i <= stage) pass++;
+                if (i == stage) count++;
+            }
+            
+            if (count == 0) {
+                rates[i-1] = 0;
+                continue;
+            }
+            rates[i-1] = count*1.0 / pass;
+        }
+        
+        for(int i=0; i<N; i++) {
+            System.out.println(rates[i]);
+        }
+        
+        for(int i=0; i<rates.length; i++) {
+            //0보다 작은 값
+            double max = -1;
+            int maxIdx = 0;
+            
+            for(int j=0; j<rates.length; j++) {
+                if (max < rates[j]) {
+                    max = rates[j];
+                    maxIdx = j;                        
+                }
+            }
+             rates[maxIdx] = -1; //다음 for문 돌때 무시할 수 있도록
+             answer[i] = maxIdx + 1;
+        }
+        return answer;
+    }
+}
+```
