@@ -97,7 +97,7 @@ function solution(N, stages) {
     
     while (true) {
         nHighest = -1
-        nStage = -1;
+        nStageIdx = -1;
         nAllChecked = true;
         for (var i=0; i<arrFailure.length; i++) {
             if (arrFailure[i] == -1) continue;
