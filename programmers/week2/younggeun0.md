@@ -58,6 +58,8 @@ function solution(N, stages) {
 }
 ```
 
+![try1](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week2/image/young_try1.png?raw=true)
+
 * OBject보단 배열이 빠르다고 판단되어 리팩토링
 
 ```js
