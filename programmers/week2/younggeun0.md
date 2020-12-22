@@ -1,7 +1,66 @@
 # [2차] 실패율
 
-```javascript
+* 속도 때문에 실패한 코드(Object 사용)
 
+```javascript
+function solution(N, stages) {
+    var answer = [];
+    var nAllUsers = stages.length;  // 전체 유저 수
+    
+    // 1. 스테이지 별 유저수 계산 (스테이지 : 인원수)
+    var objStageCnt = {};
+    for (var i=0; i<nAllUsers; i++) {
+        var nStage = parseInt(stages[i]);
+        if (objStageCnt[nStage] === undefined) {
+            objStageCnt[nStage] = 1;    
+        } else {
+            objStageCnt[nStage] = objStageCnt[nStage] + 1;
+        }
+    }
+    // console.log(objStageCnt);
+    
+    // 2. 스테이지 별 실패율 계산
+    var objStageFailure = {};
+    var nClearCnt = 0;
+    for (var i=0; i < N; i++) {
+        var nUserOnStage = nAllUsers - nClearCnt;
+        var nUserOnStageNotClear = objStageCnt[i + 1];
+        if (!nUserOnStageNotClear) nUserOnStageNotClear = 0;
+        objStageFailure[i + 1] = nUserOnStageNotClear / nUserOnStage;
+        nClearCnt += nUserOnStageNotClear;
+    }
+    // console.log(objStageFailure);
+    
+    // 3. 값 크기에 따라 오름차순 정렬
+    var nHighest;
+    var nTemp;
+    var nAllChecked;
+    while (true) {
+        nHighest = -1
+        nTemp = -1;
+        nAllChecked = true;
+        for (const nStage in objStageFailure) {
+            nAllChecked = false;
+            if (objStageFailure[nStage] > nHighest) {
+                nHighest = objStageFailure[nStage];
+                nTemp = parseInt(nStage);
+            }
+        }
+        if (nAllChecked) {
+            break;
+        }
+        
+        answer.push(nTemp);
+        delete objStageFailure[nTemp];
+    }
+    
+    return answer;
+}
+```
+
+* OBject보단 배열이 빠르다고 판단되어 리팩토링
+
+```js
 
 ```
 
