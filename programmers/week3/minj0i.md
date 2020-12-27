@@ -28,3 +28,27 @@ arr.sort();
 ```
 
 - d.sort((a, b) => a - b); 로 써도 된다.
+
+```JAVA
+import java.util.*;
+
+class Solution {
+    public int solution(int[] d, int budget) {
+        int answer = 0;
+        int sum = 0;
+        
+        Arrays.sort(d);
+        
+        for(int i : d) {
+            if(i + sum > budget) {
+                break;
+            }
+            answer++;
+            sum += i;
+        }
+        return answer;
+    }
+}
+```
+
+- 자바도 굉장히 느리지만 같은 로직으로 되네요.
