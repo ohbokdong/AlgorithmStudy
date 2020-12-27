@@ -37,6 +37,7 @@
   * **3회차(2020-12-27) - 4. 알고리즘의 시간 복잡도 분석**
     * [sgmsgood(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/sgmsgood.md)
     * [rlawjddbs(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/rlawjddbs.md)
+    * [프로그래머스 문제풀이 - Summer/Winter Coding(~2018)(예산)](https://programmers.co.kr/learn/courses/30/lessons/12982)    
   * **4회차(2020-?) - 6. 무식하게 풀기**
     * [ch.choi(정)]()
     * [sgmsgood(부)]()
