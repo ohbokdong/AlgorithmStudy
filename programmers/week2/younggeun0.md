@@ -116,15 +116,3 @@ function solution(N, stages) {
     return answer;
 }
 ```
-
-## 인상깊은 다른사람 풀이
-
-* 
-
-```javascript
-
-```
-
-## **추가로 배운 JS api**
-
-* 
