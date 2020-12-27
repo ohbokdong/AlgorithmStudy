@@ -34,9 +34,9 @@
       * [sgmsgood](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week2/sgmsgood.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week2/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week2/ch.choi.md)
-  * **3회차(2020-?) - 4. 알고리즘의 시간 복잡도 분석**
-    * [sgmsgood(정)]()
-    * [rlawjddbs(부)]()
+  * **3회차(2020-12-27) - 4. 알고리즘의 시간 복잡도 분석**
+    * [sgmsgood(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/sgmsgood.md)
+    * [rlawjddbs(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/rlawjddbs.md)
   * **4회차(2020-?) - 6. 무식하게 풀기**
     * [ch.choi(정)]()
     * [sgmsgood(부)]()
