@@ -22,7 +22,7 @@ function solution(d, budget) {
 ## 인상깊은 다른사람 풀이
 
 * 추천수가 가장 많던 풀이
-  * 코드는 깔끔하나 누적합 반복이 너무 많은듯함(누적합 후 budget보다 크면 맨 뒤에서 하나 빼는 동작 반복)
+  * 코드는 깔끔하나 누적합 반복이 너무 많은듯함(답을 구할 때까지 누적합 후 budget보다 크면 맨 뒤에서 하나 빼는 동작 반복)
 
 ```js
 function solution(d, budget) {
@@ -33,7 +33,6 @@ function solution(d, budget) {
     return d.length; // 답을 저장할 변수없이 바로 length로 반환
 }
 ```
-
 
 
 ## **추가로 배운 JS api**
