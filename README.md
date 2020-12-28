@@ -38,6 +38,11 @@
     * [sgmsgood(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/sgmsgood.md)
     * [rlawjddbs(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/rlawjddbs.md)
     * [프로그래머스 문제풀이 - Summer/Winter Coding(~2018)(예산)](https://programmers.co.kr/learn/courses/30/lessons/12982)    
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/younggeun0.md)
+      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/minj0i.md)
+      * [sgmsgood](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/sgmsgood.md)
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/rlawjddbs.md)
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/ch.choi.md)
   * **4회차(2020-?) - 6. 무식하게 풀기**
     * [ch.choi(정)]()
     * [sgmsgood(부)]()
