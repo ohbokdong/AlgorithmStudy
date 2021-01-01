@@ -27,7 +27,7 @@ arr.sort();
 (6) [1, 10, 2, 22, 3, 5]
 ```
 
-- d.sort((a, b) => a - b); 로 써도 된다.
+- d.sort((a, b) => a - b); 로 써야 내가 원하는 숫자 정렬이 된다.
 
 ```JAVA
 import java.util.*;
