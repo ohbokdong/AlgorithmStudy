@@ -45,7 +45,7 @@
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/ch.choi.md)
     * [프로그래머스 문제풀이 - 기능개발](https://programmers.co.kr/learn/courses/30/lessons/42586)
       * [younggeun0]()
-      * [minj0i]()
+      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/minj0i-2.md)
       * [sgmsgood]()
       * [rlawjddbs]()
       * [ch.choi]()
