@@ -34,7 +34,7 @@ class Solution {
 }
 ```
 
-# [보충] - 팀원의 의견을 반영하여 수정해본 풀이
+### [보충] - 팀원의 의견을 반영하여 수정해본 풀이
 ```java
 class Solution {
     public String[] solution(int n, int[] arr1, int[] arr2) {
