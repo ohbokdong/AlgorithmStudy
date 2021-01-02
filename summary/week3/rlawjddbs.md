@@ -214,7 +214,7 @@ vector<double> movingAverage2(const vector<double>& A, int M) {
 - 만들 수 있는 음식의 모든 목록을 만드는 과정은 여러 개의 결정으로 나누면 자연스러움
     - 우선 첫 번째 요리를 만들지 말지 결정하고, 그 다음엔 두 번째 요리를 만들지 말지를 결정하는 식
 
-![모든 답 세어보기](https://github.com/ohbokdong/AlgorithmStudy/blob/master/summary/week3/images/menu.jpeg)   
+![모든 답 세어보기](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week3/images/menu.jpeg)   
 - 맨 위의 동그라미 안에 쓰인 텅 빈 목록부터 시작해서, 각 음식을 만들지 말지를 선택해 감
 - 맨 윗층에서는 갈비찜을 만들지 여부를 결정함
 - 다음 층에서는 피자를 만들지 여부를 결정함
