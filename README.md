@@ -34,7 +34,7 @@
       * [sgmsgood](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week2/sgmsgood.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week2/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week2/ch.choi.md)
-  * **3회차(2020-12-27) - 4. 알고리즘의 시간 복잡도 분석**
+  * **3회차(2020-01-02) - 4. 알고리즘의 시간 복잡도 분석**
     * [sgmsgood(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/sgmsgood.md)
     * [rlawjddbs(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/rlawjddbs.md)
     * [프로그래머스 문제풀이 - Summer/Winter Coding(~2018)(예산)](https://programmers.co.kr/learn/courses/30/lessons/12982)    
