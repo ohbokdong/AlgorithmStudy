@@ -44,7 +44,7 @@
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/ch.choi.md)
     * [프로그래머스 문제풀이 - 기능개발](https://programmers.co.kr/learn/courses/30/lessons/42586)
-      * [younggeun0]()
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/younggeun0-2.md)
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/minj0i-2.md)
       * [sgmsgood]()
       * [rlawjddbs]()
