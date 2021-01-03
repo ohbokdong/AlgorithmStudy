@@ -3,7 +3,7 @@
 ```javascript
 function solution(progresses, speeds) {
     var answer = [];
-    // 1. 각 기능 별 몇일의 추가 개발이 필요한지 계산
+    // 1. 각 기능 별 추가 개발이 몇일 필요한지 계산
     var arrProgressDays = [];
     for (var i=0; i<progresses.length; i++) {
         var nCurrentPer = progresses[i];
