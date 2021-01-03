@@ -63,4 +63,4 @@ function solution(progresses, speeds) {
 * 다행히도 속도차이는 크게 안나는 듯
   * 내 풀이, 인상 깊은 다른 사람 풀이 : 평균 0.12초(소수점 세번째 자리에서 반올림)
 
-![younggeun0_img1]()
+![younggeun0_img1](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/younggeun0_img1.png?raw=true)
