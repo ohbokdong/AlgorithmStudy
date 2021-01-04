@@ -48,7 +48,7 @@
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/minj0i-2.md)
       * [sgmsgood]()
       * [rlawjddbs]()
-      * [ch.choi]()
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/ch.choi-2.md)
   * **4회차(2020-?) - 6. 무식하게 풀기**
     * [ch.choi(정)]()
     * [sgmsgood(부)]()
