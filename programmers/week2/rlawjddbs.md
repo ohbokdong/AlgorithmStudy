@@ -1,3 +1,6 @@
+# [2차] 실패율
+- 예전에 Comparator 인터페이스를 구현하여 정렬해본 경험이 있어서 Comparator를 구현하여 정렬해봄
+- 도달못한 유저, 도달했는데 클리어 못한 유저, 도달했고 클리어한 유저 이렇게 세 가지 유형을 감안해야 된다는 걸 깨닫는데 엄청 오래 걸림(...)
 ```java
 import java.util.Arrays;
 import java.util.Comparator;
