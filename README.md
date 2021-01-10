@@ -52,6 +52,12 @@
   * **4회차(2020-01-10) - 6. 무식하게 풀기**
     * [ch.choi(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week4/ch.choi.md)
     * [sgmsgood(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week4/sgmsgood.md)
+    * [프로그래머스 문제풀이 - 월간 코드 챌린지 시즌1(두 개 뽑아서 더하기)](https://programmers.co.kr/learn/courses/30/lessons/68644)
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/younggeun0.md)
+      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/minj0i.md)
+      * [sgmsgood](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/sgmsgood.md)
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/rlawjddbs.md)
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/ch.choi.md)
   * **5회차(2020-?) - 7. 분할 정복**
     * [rlawjddbs(정)]()
     * [ch.choi(부)]()
