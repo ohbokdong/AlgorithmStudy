@@ -35,15 +35,18 @@ class Solution {
 
         }
 
+        // Comparator 구현하여 정렬
         Arrays.sort(fRate, new Comparator<float[]>() {
             @Override
-            public int compare(float[] o1, float[] o2) {
+            public int compare(float[] o1, float[] o2) { 
+                // 2차원 배열은 1차원 배열로 비교됨 - o1[0] = fRate[0][0], o2[0] = fRate[1][0]
                 if(o1[0] < o2[0]) { return 1; }
                 if(o1[0] > o2[0]) { return -1; }
                 return 0;
             }
         });
 
+        // 정렬된 실패율의 원래 index를 저장
         for (int i = 0; i < N; i++) {
             answer[i] = (int)fRate[i][1];
         }
