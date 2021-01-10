@@ -51,7 +51,7 @@
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/ch.choi-2.md)
   * **4회차(2020-?) - 6. 무식하게 풀기**
     * [ch.choi(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week4/ch.choi.md)
-    * [sgmsgood(부)]()
+    * [sgmsgood(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week4/sgmsgood.md)
   * **5회차(2020-?) - 7. 분할 정복**
     * [rlawjddbs(정)]()
     * [ch.choi(부)]()
