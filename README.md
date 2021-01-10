@@ -58,9 +58,9 @@
       * [sgmsgood](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/sgmsgood.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/ch.choi.md)
-  * **5회차(2020-?) - 7. 분할 정복**
-    * [rlawjddbs(정)]()
-    * [ch.choi(부)]()
+  * **5회차(2020-01-24) - 7. 분할 정복**
+    * [rlawjddbs(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/rlawjddbs.md)
+    * [ch.choi(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/ch.choi.md)
   * **6회차(2020-?) - 8. 동적 계획법**
     * [minj0i(정)]()
     * [younggeun0(부)]()
