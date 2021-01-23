@@ -2,7 +2,7 @@
 - 각개 격파라고 설명되는 가장 유명한 알고리즘 디자인 패러다임
 - 본 패러다임을 차용한 알고리즘들은 한 문제를 둘 이상의 부분 문제로 나눠 각 부분 문제를 재귀호출로 계산한 뒤 부분 문제의 답으로 전체 문제의 답을 계산함
 ## 일반적인 재귀 호출과 분할 정복의 차이
-![일반 재귀호출과 분할 정복의 차이](https://github.com/ohbokdong/AlgorithmStudy/blob/master/summary/week5/images/recursive_divide_diffPoint.png)
+![일반 재귀호출과 분할 정복의 차이](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/recursive_divide_diffPoint.png)
 - 재귀 호출은 문제를 `한 조각`과 `나머지 전체 조각`으로 나눔
 - 분할 정복은 문제를 `절반`씩 나눔
 ---
@@ -24,17 +24,17 @@
 - 6.2절의 1+2+…+n의 합을 재귀 호출을 이용해 계산하는 `recursiveSum()` 함수처럼, 분할 정복을 이용하여 계산하는 `fastSum()` 함수 작성
 - `1`부터 `n`까지의 합을 `n`개의 조각으로 나눈 뒤, 이들을 반으로 뚝 잘라 `n/2`개의 조각들로 만들어진 부분 문제 두 개를 만듬 (편의상 n은 짝수로 가정)
    
-![분할 정복 계산식1](https://github.com/ohbokdong/AlgorithmStudy/blob/master/summary/week5/images/fastSumFunction1.png)   
+![분할 정복 계산식1](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/fastSumFunction1.png)   
    
 - 첫 번째 부분 문제는 fastSum(n/2)로 나타낼 수 있지만, 두 번째 부분 문제는 그렇지 않음
 - 재귀적으로 풀기 위해서는 각 부분 문제를 '1부터 n까지의 합' 꼴로 표현할 수 있어야 함
 - 두 번째 조각은 'a부터 b까지의 합'형태를 가지고 있기 때문에 적절하지 않음
 - 따라서 두 번째 부분 문제를 fastSum(x)를 포함하는 형태로 바꿔 써야 함
-![분할 정복 계산식2](https://github.com/ohbokdong/AlgorithmStudy/blob/master/summary/week5/images/fastSumFunction2.png)   
+![분할 정복 계산식2](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/fastSumFunction2.png)   
    
 - 공통된 항 `n/2`를 빼내면 놀랍게도 `fastSum(n/2)`이 나타나므로 다음과 같이 쓸 수 있음
 
-![분할 정복 계산식3](https://github.com/ohbokdong/AlgorithmStudy/blob/master/summary/week5/images/fastSumFunction2.png)   
+![분할 정복 계산식3](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/fastSumFunction2.png)   
 
 ```C++
 // 코드 7.1 - 1부터 n까지의 합을 구하는 분할 정복 알고리즘
