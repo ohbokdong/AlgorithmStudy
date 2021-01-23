@@ -193,11 +193,76 @@ vector<int> multiply(const vector<int>& a, const vector<int>& b) {
 - a와 b가 각각 256자리 수라면 a<sub>1</sub>과 b<sub>1</sub>은 첫 128자리, a<sub>0</sub>과 b<sub>0</sub>은 그 다음 128자리를 저장하도록 하는 것
    
    
-a = a<sub>1</sub> X 10<sup>128</sup> + a<sub>0</sub>   
-b = b<sub>1</sub> X 10<sup>128</sup> + b<sub>0</sub>   
+a = a<sub>1</sub> x 10<sup>128</sup> + a<sub>0</sub>   
+b = b<sub>1</sub> x 10<sup>128</sup> + b<sub>0</sub>   
    
 - 카라츠바는 이때 a X b를 네 개의 조각을 이용해 표현하는 방법을 살펴보았음
    
    
-a X b = (a<sub>1</sub> X 10<sup>128</sup> + a<sub>0</sub>) X (b<sub>1</sub> X 10<sup>128</sup> + b<sub>0</sub>)   
-      = a<sub>1</sub> X b<sub>1</sub> X 10<sup>256</sup> + (a<sub>1</sub> X b<sub>0</sub> + a<sub>0</sub> X b<sub>1</sub>) X 10<sup>128</sup> + a<sub>0</sub> X b<sub>0</sub>
+a X b = (a<sub>1</sub> x 10<sup>128</sup> + a<sub>0</sub>) x (b<sub>1</sub> x 10<sup>128</sup> + b<sub>0</sub>)   
+      = a<sub>1</sub> x b<sub>1</sub> x 10<sup>256</sup> + (a<sub>1</sub> x b<sub>0</sub> + a<sub>0</sub> x b<sub>1</sub>) x 10<sup>128</sup> + a<sub>0</sub> x b<sub>0</sub>   
+   
+- 이 방법은 큰 정수 두 개를 한 번 곱하는 대신, 절반 크기로 나눈 작은 조각을 네 번 곱함
+    - 10의 거듭제곱과 곱하는 것은 그냥 뒤에 0을 붙이는 시프트 연산으로 구현하면 되니 곱셈으로 치지 않음
+- 이대로도 각각을 재귀 호출해서 해결하면 분할 정복 알고리즘이라고 할 수 있지만 이 방법의 전체 수행 시간이 O(n<sup>2</sup>)이므로 개선 필요
+   
+카라츠바는 다음과 같이 a x b를 표현했을 때 네 번 대신 세 번의 곱셈으로만 이 값을 계산할 수 있다는 점을 발견함   
+   
+![카라츠바1](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/karatsuba1.png)   
+   
+조각들의 곱을 각각 위와 같이 z<sub>2</sub>, z<sub>1</sub>, z<sub>0</sub>라고 씀. 우선 z<sub>0</sub>와 z<sub>2</sub>를 각각 한 번의 곱셈으로 구하고 다음 식을 이용함   
+   
+![카라츠바1](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/karatsuba1.png)   
+   
+따라서 위 식의 결과에서 z<sub>0</sub>과 z<sub>2</sub>를 빼서 z<sub>1</sub>을 구할 수 있음.
+```
+z2 = a1 * b1;
+z0 = a0 * b0;
+z1 = (a0 + a1) * (b0 + b1) - z0 - z2;
+```
+- 이 과정은 곱셈을 세 번밖에 쓰지 않음
+
+```C++
+// 코드 7.4 - 카라츠바의 빠른 정수 곱셈 알고리즘
+// a += b * (10^k); 를 구현
+void addTo(vector<int>& a, const vector<int>& b, int k);
+// a -= b; 를 구현한다. a >= b를 가정한다.
+void subFrom(vector<int>& a, const vector<int>& b);
+// 두 긴 정수의 곱을 반환
+vector<int> karatsuba(const vector<int>& a, const vector<int>& b) {
+    int an = a.size(), bn = b.size();
+    // a가 b보다 짧을 경우 둘을 바꾼다.
+    if(an < bn) return karatsuba(b, a);
+    // 기저 사례: a나 b가 비어 있는 경우
+    if(an == 0 || bn == 0) return vector<int>();
+    // 기저 사례: a가 비교적 짧은 경우 O(n^2) 곱셈으로 변경한다.
+    if(an <= 50) return multiply(a, b);
+    int half = an / 2;
+    // a와 b를 밑에서 half 자리와 나머지로 분리한다.
+    vector<int> a0(a.begin(), a.begin() + half);
+    vector<int> a1(a.begin() + half, a.end());
+    vector<int> b0(b.begin(), b.begin() + min<int>(b.size(), half));
+    vector<int> b1(b.begin() + min<int>(b.size(), half), b.end());
+    // z2 = a1 * b1
+    vector<int> z2 = karatsuba(a1, b1);
+    // z0 = a0 * b0
+    vector<int> z0 = karatsuba(a0, b0);
+    // a0 = a0 + a1; b0 = b0 + b1
+    addTo(a0, a1, 0); addTo(b0, b1, 0);
+    // z1 = (a0 * b0) - z0 - z2;
+    vector<int> z1 = karatsuba(a0, b0);
+    subFrom(z1, z0);
+    subFrom(z1, z2);
+    // ret = z0 + z1 * 10^half + z2 * 10^(half*2)
+    vector<int> ret;
+    addTo(ret, z0, 0);
+    addTo(ret, z1, half);
+    addTo(ret, z2, half + half);
+    return ret;
+}
+```
+   
+### 시간 복잡도 분석
+- 병합 단계의 수행 시간: addTo()와 subFrom()의 수행 시간에 지배됨
+- 기저 사례의 처리 시간: multiply()의 수행 시간에 지배됨
+- 최종 시간 복잡도: O(n<sup>lg3</sup>)
