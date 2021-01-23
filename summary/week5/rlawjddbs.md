@@ -5,7 +5,6 @@
 ![일반 재귀호출과 분할 정복의 차이](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/recursive_divide_diffPoint.png)
 - 재귀 호출은 문제를 `한 조각`과 `나머지 전체 조각`으로 나눔
 - 분할 정복은 문제를 `절반`씩 나눔
----
    
 ## 분할 정복을 사용하는 알고리즘들이 대개 갖춘 구성 요소
 1. `divide`: 문제를 더 작은 문제로 분할하는 과정
@@ -114,4 +113,5 @@ SquareMatrix pow(const SquareMatrix& A, int m) {
 > - 병합 과정이 필요 없도록 한쪽의 배열에 포함된 수가 다른 쪽 배열의 수보다 항상 작도록 배열을 분할함
 > - 이를 위해 퀵 정렬은 `파티션(partition)`이라고 부르는 단계를 도입함
 >   - 배열에 있는 수 중 임의의 `기준수(pivot)`를 지정한 후 기준보다 작거나 같은 숫자를 왼쪽, 더 큰 숫자를 오른쪽으로 보내는 과정
-
+   
+![병합 정렬과 퀵 정렬](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/merge_sort_quick_sort.png)   
