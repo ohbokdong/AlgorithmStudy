@@ -150,5 +150,54 @@ SquareMatrix pow(const SquareMatrix& A, int m) {
 ### 예제: 카라츠바의 빠른 곱셈 알고리즘
 - 수백 자리 ~ 수만 자리 이상의 큰 숫자들을 다룰 때 주로 사용
 - 이렇게 큰 숫자들은 배열을 이용해 저장해야 함
-- 두 자연수의 십진수 표기가 배열에 주어진다고 할 때, 이 둘을 곱한 결과를 계산하는 가장 기본적인 방법은 초등학교 산수 시간에 배운 방법을 그대로 사용하는 것
+- 두 자연수의 십진수 표기가 배열에 주어진다고 할 때, 이 둘을 곱한 결과를 계산하는 가장 기본적인 방법은 초등학교 산수 시간에 배운 방법을 그대로 사용하는 것   
+   
 ![두 정수의 곱을 구하는 초등학교 알고리즘](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/multiply.png)   
+   
+```C++
+// 코드 7.3 - 두 큰 수를 곱하는 O(n2)시간 알고리즘
+// num[]의 자릿수 올림을 처리
+void normalize(vector<int>& num) {
+    num.push_back(0);
+    // 자릿수 올림을 처리한다.
+    for(int i = 0; i+1 < num.size(); ++i) { // 배열 자리수보다 
+        if(num[i] < 0) { // 음수
+            int borrow = (abs(num[i]) + 9) / 10;
+            num[i+1] -= borrow;
+            num[i] += borrow * 10;
+        } else { // 양수
+            num[i+1] += num[i] / 10; // 다음 원소에 두 자리수 부터 더하기
+            num[i] %= 10; // 현재 원소는 한 자리수만 남겨둠
+        }
+    }
+    while(num.size() > 1 && num.back() == 0) num.pop_back(); // 왜 팝하는거지?
+}
+// 두 긴 자연수의 곱을 반환
+// 각 배열에는 각 수의 자릿수가 1의 자리에서부터 시작해 저장되어 있다.
+// 예: multiply({3, 2, 1}, {6, 5, 4}) = 123 * 456 = 56088 = {8, 8, 0, 6, 5}
+vector<int> multiply(const vector<int>& a, const vector<int>& b) {
+    vector<int> c(a.size() + b.size() + 1, 0); // 0값으로 초기화된 a.size() + b.size() + 1개의 원소를 가짐
+    for(int i = 0; i < a.size(); ++i)
+        for(int j = 0; j < b.size(); ++j)
+            c[i+j] += a[i] * b[j];
+    normalize(c);
+    return c;
+}
+```
+- 이 알고리즘의 시간복잡도는 두 정수의 길이가 모두 n이라고 할 때 O(n<sup>2</sup>)
+    - n번 실행되는 for문이 두번 겹쳐 있기 때문
+- 본 알고리즘을 카라츠바 빠른 곱셈 알고리즘으로 더욱 빠른 연산이 가능함
+
+### 카라츠바 알고리즘으로 풀기
+- 카라츠바의 빠른 곱셈 알고리즘은 두 수를 각각 절반으로 쪼갬
+- a와 b가 각각 256자리 수라면 a<sub>1</sub>과 b<sub>1</sub>은 첫 128자리, a<sub>0</sub>과 b<sub>0</sub>은 그 다음 128자리를 저장하도록 하는 것
+   
+   
+a = a<sub>1</sub> X 10<sup>128</sup> + a<sub>0</sub>   
+b = b<sub>1</sub> X 10<sup>128</sup> + b<sub>0</sub>   
+   
+- 카라츠바는 이때 a X b를 네 개의 조각을 이용해 표현하는 방법을 살펴보았음
+   
+   
+a X b = (a<sub>1</sub> X 10<sup>128</sup> + a<sub>0</sub>) X (b<sub>1</sub> X 10<sup>128</sup> + b<sub>0</sub>)   
+      = a<sub>1</sub> X b<sub>1</sub> X 10<sup>256</sup> + (a<sub>1</sub> X b<sub>0</sub> + a<sub>0</sub> X b<sub>1</sub>) X 10<sup>128</sup> + a<sub>0</sub> X b<sub>0</sub>
