@@ -148,4 +148,7 @@ SquareMatrix pow(const SquareMatrix& A, int m) {
 -----
    
 ### 예제: 카라츠바의 빠른 곱셈 알고리즘
-
+- 수백 자리 ~ 수만 자리 이상의 큰 숫자들을 다룰 때 주로 사용
+- 이렇게 큰 숫자들은 배열을 이용해 저장해야 함
+- 두 자연수의 십진수 표기가 배열에 주어진다고 할 때, 이 둘을 곱한 결과를 계산하는 가장 기본적인 방법은 초등학교 산수 시간에 배운 방법을 그대로 사용하는 것
+![두 정수의 곱을 구하는 초등학교 알고리즘](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/multiply.png)   
