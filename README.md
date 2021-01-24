@@ -61,7 +61,7 @@
   * **5회차(2020-01-24) - 7. 분할 정복**
     * [rlawjddbs(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/rlawjddbs.md)
     * [ch.choi(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/ch.choi.md)
-    * [프로그래머스 문제풀이 - 쿼드압축 후 개수 세기)](https://programmers.co.kr/learn/courses/30/lessons/68936)
+    * [프로그래머스 문제풀이 - 쿼드압축 후 개수 세기](https://programmers.co.kr/learn/courses/30/lessons/68936)
       * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week5/younggeun0.md)
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week5/minj0i.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week5/rlawjddbs.md)
