@@ -212,7 +212,7 @@ a X b = (a<sub>1</sub> x 10<sup>128</sup> + a<sub>0</sub>) x (b<sub>1</sub> x 10
    
 조각들의 곱을 각각 위와 같이 z<sub>2</sub>, z<sub>1</sub>, z<sub>0</sub>라고 씀. 우선 z<sub>0</sub>와 z<sub>2</sub>를 각각 한 번의 곱셈으로 구하고 다음 식을 이용함   
    
-![카라츠바1](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/karatsuba1.png)   
+![카라츠바1](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/images/karatsuba2.png)   
    
 따라서 위 식의 결과에서 z<sub>0</sub>과 z<sub>2</sub>를 빼서 z<sub>1</sub>을 구할 수 있음.
 ```
