@@ -309,7 +309,7 @@ string reverse(string::iterator& it) {
         return string(1, head);
     string upperLeft = reverse(it);
     string upperRight = reverse(it);
-    stringlowerLeft = reverse(it);
+    string lowerLeft = reverse(it);
     string lowerRight = reverse(it);
     // 각각 위와 아래 조각들의 위치를 바꿈
     return string("x") + lowerLeft + lowerRight + upperLeft + upperRight;
