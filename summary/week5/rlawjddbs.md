@@ -286,7 +286,7 @@ void decompress(string::iterator& it, int y, int x, int size) {
     // 기저 사례: 첫 글자가 b 또는 w인 경우
     if(head == 'b' || head == 'w') {
         for(int dy = 0; dy < size; ++dy)
-            for(int dx = 0; dx < size; dx++)
+            for(int dx = 0; dx < size; ++dx)
                 decompressed[y+dy][x+dx] = head;
     } else {
         // 네 부분을 각각 순서대로 압축 해제한다.
