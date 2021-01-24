@@ -266,3 +266,57 @@ vector<int> karatsuba(const vector<int>& a, const vector<int>& b) {
 - 병합 단계의 수행 시간: addTo()와 subFrom()의 수행 시간에 지배됨
 - 기저 사례의 처리 시간: multiply()의 수행 시간에 지배됨
 - 최종 시간 복잡도: O(n<sup>lg3</sup>)
+
+-----
+
+## 7.2 문제: 쿼드 트리 뒤집기 (p.189)
+대량의 좌표 데이터를 메모리 안에 압축해 저장하는 문제
+
+## 7.3 풀이: 쿼드 트리 뒤집기
+- 이 문제를 풀 수 있는 가장 무식한 방법은 주어진 그림의 쿼드 트리 압축을 풀어서 실제 이미지를 얻고 상하 반전한 뒤 다시 쿼드 트리 압축하는 것
+- 문제에 주어진 원본 그림의 크기 제한을 보면 이 방법을 곧이곧대로 구현 할 수 없다는 것을 알 수 있음
+
+### 쿼드 트리 압축 풀기
+```C++
+// 코드 7.5 - 쿼드 트리 압축을 해제하는 재귀 호출 알고리즘
+char decompressed [MAX_SIZE][MAX_SIZE];
+void decompress(string::iterator& it, int y, int x, int size) {
+    // 한 글자를 검사할 때마다 반복자를 한 칸 앞으로 옮긴다.
+    char head = *(it++);
+    // 기저 사례: 첫 글자가 b 또는 w인 경우
+    if(head == 'b' || head == 'w') {
+        for(int dy = 0; dy < size; ++dy)
+            for(int dx = 0; dx < size; dx++)
+                decompressed[y+dy][x+dx] = head;
+    } else {
+        // 네 부분을 각각 순서대로 압축 해제한다.
+        int half = size/2;
+        decompress(it, y, x, half);
+        decompress(it, y, x+half, half);
+        decompress(it, y+half, x, half);
+        decompress(it, y+half, x+half, half);
+    }
+}
+```
+   
+### 압축 다 풀지 않고 뒤집기
+```C++
+// 코드 7.6 - 쿼드 트리 뒤집기 문제를 해결하는 분할 정복 알고리즘
+string reverse(string::iterator& it) {
+    char head = *it;
+    ++it;
+    if(head == 'b' || head == 'w')
+        return string(1, head);
+    string upperLeft = reverse(it);
+    string upperRight = reverse(it);
+    stringlowerLeft = reverse(it);
+    string lowerRight = reverse(it);
+    // 각각 위와 아래 조각들의 위치를 바꿈
+    return string("x") + lowerLeft + lowerRight + upperLeft + upperRight;
+}
+```
+   
+### 시간 복잡도 분석
+- reverse() 함수는 한 번 호출될 때마다 주어진 문자열의 한 글자씩을 사용
+- 따라서 함수가 호출되는 횟수는 문자열의 길이에 비례하므로 O(n)이 됨
+    - 각 문자열을 합치는 데 O(n)의 시간이 든다 해도 시간 안에 충분히 수행 가능
