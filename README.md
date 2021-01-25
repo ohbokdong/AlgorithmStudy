@@ -66,7 +66,7 @@
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week5/minj0i.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week5/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week5/ch.choi.md)
-  * **6회차(2020-?) - 8. 동적 계획법**
+  * **6회차(2020-01-31) - 8. 동적 계획법**
     * [minj0i(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week6/minj0i.md)
     * [younggeun0(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week6/younggeun0.md)
   * **7회차(2020-?) - 18. 선형 자료 구조**
