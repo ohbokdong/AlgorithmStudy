@@ -63,4 +63,10 @@ int bino2(int n, int r) {
 
 #### 메모이제이션을 적용할 수 있는 경우
 
+* `참조적 투명 함수(Referential Transparent Function)`의 경우에만 적용 가능
+   *  참조적 투명성(Referential Transparency) - 함수의 반환 값이 그 입력 값만으로 결정되는 여부
+   *  프로그래밍은 수학의 함수와 다르게 여러 입력에 의해 출력이 바뀔 수 있음(ex 전역 변수, 입력 파일, 클래스 멤버 변수 등)
+
+#### 메모이제이션 구현 패턴
+
 * 
