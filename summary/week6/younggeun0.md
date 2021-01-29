@@ -153,7 +153,7 @@ int jump2(int y, int X) { // 반환형이 int
   if (ret != -1) return ret;
 
   int jumpSize = board[y][x];
-  return jump2(y + jumpSize, x) || jump2(y, x + jumpSize); // 1 || 0 == 1, 1이 반환되면 도달가능
+  return ret = jump2(y + jumpSize, x) || jump2(y, x + jumpSize); // 1 || 0 == 1, 1이 반환되면 도달가능
 }
 ```
 
