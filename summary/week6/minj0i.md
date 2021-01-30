@@ -296,7 +296,7 @@ int lis3(int start) {
 ```
 - start = -1 이 주어질 수 있기 때문에 cache[start + 1]을 사용
 - cache[]의 크기도 1 커짐
-- lis3(-1)--1을 결과로 쓰면 됨
+- lis3(-1)-1을 결과로 쓰면 됨
 
 > #### 더 빠른 해법
 O(nlgn)에 LIS를 찾을 수 있는 알고리즘이 있음.   
@@ -320,3 +320,161 @@ C[i] = 지금까지 만든 부분 배열이 갖는 길이 i인 증가 부분 수
 4. 이 항목 필요하지 않았음
 5. 메모이제이션 적용
 
+## 8.5 문제: 합친 LIS(문제 ID: JLIS, 난이도 하)
+두 개의 정수 수열 A와 B의 길이 0 이상의 증가 부분 수열을 얻은 뒤 이들을 크기 순서대로 합친 것 중 가장 긴 수열을 합친 LIS(JLIS, Joined Longest Increasing Subsequence)를 구하여 길이를 계산하는 프로그램 구하기
+
+### 시간 및 메모리 제한
+2초 안 실행, 64MB 이하의 메모리 사용
+### 입력
+첫 줄에는 테스트 케이스의 수 C(1이상 50이하). 각 테스트의 첫 줄에는 A와 B의 길이 n과 m(1이상 100이하)이 주어지고, 다음 줄에는 n개의 정수로 A의 원소들, 그 다음줄에는 m개의 정수로 B의 원소들이 주어집니다. 모든 원소들은 32비트 부호 있는 정수에 저장 가능
+
+### 출력
+각 테스트 케이스마다 한 줄에 JLIS의 길이를 출력
+
+## 8.6 풀이: 합친 LIS
+### 탐욕법으로 안된다.
+두 수열의 LIS를 각각 찾은 뒤 이들을 합치면 되지 않음
+### 비슷한 문제를 풀어본 적이 있군요
+수열 S의 최대 증가 부분 수열을 찾는 재귀 함수 lis3()의 정의
+```
+lis3(start) = S[start]에서 시작하는 최대 증가 부분 수열의 길이
+```
+```
+jlis(indexA, indexB) = A[indexA]와 B[indexB]에서 시작하는 합친 증가 부분 수열의 최대 길이
+```
+
+A[indexA]와 B[indexB]중 작은 쪽이 앞에 온다고 하면, 이 증가 부분 수열의 다음 숫자는 A[indexA+1] 이후 혹은 B[indexB+1] 이후의 수열 중 max(A[indexA], B[indexB])보다 큰 수 중 하나가 된다. 그리고 A[nextA]를 다음 숫자로 선택했을 경우에 합친 증가 부분 수열의 최대 길이는 1+jlis(nextA, indexB)가 된다.   
+
+```C++
+// 코드 8.13 합친 LIS 문제를 해결하는 동적 계획법 알고리즘
+
+// 입력이 32비트 부호 있는 정수의 모든 값을 가질 수 있으므로
+// 인위적인 최소치는 64비트여야 한다.
+const long long NEGINF = numberic_limits<long long>::min();
+int n, m, A[100], B[100];
+int cache[101][101];
+
+// min(A[indexA], B[indexB]), max(AindexA), B(indexB)로 시작하는
+// 합친 증가 부분 수열의 최대 길이를 반환한다.
+// 단 indexA == indexB == -1 혹은 A[indexA] != B[indexB]라고 가정한다.
+int jlis(int indexA, int indexB) {
+  // 메모이제이션
+  int& ret = cache[indexA+1][indexB+1];
+  if(ret != -1) return ret;
+  // A[indexA], B[indexB]가 이미 존재하므로 2개는 항상 있다.
+  ret = 2;
+  long long a = (indexA == -1 ? NEGINF : A[indexA]);
+  long long b = (indexB == -1 ? NEGINF : B[indexB]);
+  long long maxElement = max(a, b);
+  // 다음 원소를 찾는다.
+  for (int nextA = indexA + 1; nextA < n; ++nextA)
+    if (maxElement < A[indexA])
+      ret = max(ret, jlis(nextA, indexB) + 1);
+  for (int nextB = indexB + 1; nextB < m; ++nextB)
+    if (maxElement < B[nextB])
+      ret = max(ret, jlis(indexA, nextB) + 1);
+  return ret;
+}
+```
+- 아주 작은 값을 표현하기 위해 64비트 정수인 NEGINF를 사용
+- 문제에는 입력의 범위가 32비트 부호 있는 정수 전체라고 나와 있기 때문에 입력에 등장하지 않은 작은 값을 쓰려면 64비트 정수를 써야 함
+
+## 8.7 문제: 원주율 외우기( 문제 ID: PI, 난이도 하)
+<table>
+  <tr>
+    <th>경우</th>
+    <th>예</th>
+    <th>난이도</th>
+  </tr>
+  <tr>
+    <td>모든 숫자가 같을 때</td>
+    <td>333, 5555</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>숫자가 1씩 단조 증가하거나 단조 감소</td>
+    <td>2345, 3210</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>두개의 숫자가 번갈아가며 나타날때</td>
+    <td>323, 545454</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>숫자가 등차 수열을 이룰 때</td>
+    <td>147, 8642</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>이 외의 모든 경우</td>
+    <td>17912, 331</td>
+    <td>10</td>
+  </tr>
+</table>
+
+원주율의 일부가 입력으로 주어질 때, 난이도의 합을 최소화하도록 숫자들을 세자리에서 다섯자리까지 끊어 읽고 싶은데, 최소의 난이도 계산하기
+
+### 시간 및 메모리 제한
+1초 이내, 64MB 이하 메모리 사용
+
+### 입력
+입력 첫 줄 테스트 케이스의 수 C(1이상 50이하), 그 후 C줄에 하나씩 각 테스트 케이스가 주어짐. 각 테스트 케이스는 8가지 이상 10,000자리 이하 자연수, 맨 앞자리가 0일수도 잇음
+
+### 출력
+각 테스트 케이스마다 한 줄에 최소의 난이도를 출력
+
+## 8.8 풀이: 원주율 외우기
+### 메모이제이션의 적용
+적절한 완전 탐색 알고리즘을 만들면 메모이제이션으로 이 문제를 해결할 수 있음.   주어진 수열을 쪼개는 모든 방법을 하나씩 만들어 보며 그 중 난이도 합이 가장 작은 조합을 찾아 낸다. 각 경우마다 하나씩의 부분 문제를 풀어야 함. 세 개의 부분 문제에 대한 최적해를 각각 구했다고 하면, 전체 문제의 최적해는 다음 세 경우 중 가장 작은 값이 될 것
+- 길이 3인 조각의 난이도 + 3글자 빼고 나머지 수열에 대한 최적해
+- 길이 4인, + 4글자 빼고 최적해
+- 길이 5인, + 5글자 빼고 최적해
+나머지 수열의 최적해를 구할 때 앞의 부분 쪼갠 방법은 중요하지 않음(=최적 부분 구조가 성립). 따라서 시작 위치 begin이 주어질 때 최소 난이도를 반환하는 함수 memorize()를 정의하여 사용할 수 있음
+
+- classify(): 난이도를 판정
+- memorize(): 메모이제이션을 구현
+- 시간 복잡도는 O(n<sup>2</sup>)
+```C++
+// 코드8.14 원주율 외우기 문제를 해결하는 동적 계획법 알고리즘
+
+const int INF=987654321;
+string N;
+//N[a, b] 구간의 난이도를 반환한다.
+int classify(int a, int b) {
+  // 숫자 조각을 가져온다.
+  string M = N.substr(a, b-a+1);
+  // 첫 글자만으로 이루어진 문자열과 같으면 난이도는 1
+  if (M == string(M.size(), M[0])) return 1;
+  // 등차수열인지 검사한다.
+  bool progressive = true;
+  for (int i=0; i<M.size; ++i)
+    if(M[i+1] - M[i] != M[1] - M[0])
+      progressive = false;
+  // 등차수열이고 공차가 1 혹은 -1이면 난이도는 2
+  if (progressive && abs(M[1] - M[0]) == 1) return 2;
+  // 두 수가 번갈아 등장인지 확인
+  bool alternating = true;
+  for(int i=0; i< M.size(); ++i)
+    if(M[i] != M[i%2])
+      alternating = false;
+  if(alternating) return 4;
+  if(!alternating) return 5;
+  return 10; // 이외
+}
+
+int cache[10002];
+// 수열 N[begin]를 외우는 방법 중 난이도의 최소 합을 출력한다.
+int memorize(int begin) {
+  // 기저 사례: 수열의 끝에 도달했을 경우
+  if (begin == N.size()) return 0;
+  // 메모이제이션
+  int& ret = cache[begin];
+  if(ret != -1) return ret;
+  ret = INF;
+  for (int L = 3; L<=5; ++L)
+    if(begin + L <= L.size())
+      ret = min(ret, memorize(begin + L) + classify(begin, begin + L -1));
+  return ret;
+}
+```
