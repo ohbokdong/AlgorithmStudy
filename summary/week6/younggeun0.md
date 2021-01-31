@@ -514,7 +514,7 @@ int lis3(int start) {
   * jlis(indexA, indexB) = A\[indexA\]와 B\[indexB\] 에서 시작하는 합친 증가 부분 수열의 최대 길이
   * 두 수의 순서는 지정하지 않았으므로 A\[indexA\]와 B\[indexB\] 중 작은 쪽이 앞에 옴
     * 이 증가 부분 수열의 다음 숫자는 A\[indexA+1\] 이후 혹은 B\[indexB+1\] 이후의 수열 중 max(A\[indexA\], B\[indexB\]) 보다 큰 수 중 하나가 됨
-    * A\[nextA\]를 다음 수자로 선택했을 경우 합친 증가 부분 수열의 최대 길이는 1+jlis(nextA, indexB)가 됨
+    * A\[nextA\]를 다음 자로 선택했을 경우 합친 증가 부분 수열의 최대 길이는 1+jlis(nextA, indexB)가 됨
 * 점화식은 p238 참고
 
 ```c++
