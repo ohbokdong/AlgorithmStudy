@@ -492,13 +492,143 @@ int lis3(int start) {
 > 4. 이 항목은 필요하지 않음
 > 5. 메모이제이션 적용
 
-### 8.5 문제 : 합친 LIS
+### 8.5 문제 : 합친 LIS p236 참고
 
-
+* 어떤 수열에서 0개 이상의 숫자를 지운 결과를 원 수열의 `부분 수열`이라고 함
+* 중복된 숫자가 없고 오름 차순으로 정렬되어 있는 부분 수열들을 `증가 부분 수열`이라고 함
+* 두 개의 정수 수열 A, B에서 각각 길이 0 이상의 증가 부분 수열을 얻은 디ㅜ 이들을 크기 순서대로 합친 것을 `합친 증가 부분 수열`이라 함
+  * 이 중 가장 긴 수열을 `합친 LIS(JLIS, Joined Longest Increasing Subsequence)`라고 함
+* A와 B가 주어졌을 때, 합친 LIS의 길이를 계산하는 프로그램을 작성하는 문제
 
 ### 8.6 풀이 : 합친 LIS
 
-### 8.7 문제 : 원주율 외우기
+#### 탐욕법으로는 안됨
 
+* [탐욕 알고리즘](https://ko.wikipedia.org/wiki/%ED%83%90%EC%9A%95_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+  * 최적해를 구하는 데에 사용되는 근사적인 방법으로, 여러 경우 중 하나를 결정해야 할 때마다 그 순간에 최적이라고 생각되는 것을 선택해 나가는 방식으로 진행하여 최종적인 해답에 도달하는 알고리즘
+* 두 수열의 LIS를 각각 찾은 뒤 이들을 합치는 방법은 사용하지 못함
+  * 예제 3번째 입력에서 JLIS를 찾기 위해선 A에서 1 2를 선택해야하지만 A의 LIS는 10 20 30, B의 LIS는 10 20 30이므로 두 개를 합치는 걸로는 못 풂
+* 이렇게 비슷한 문제들은 비슷한 형태의 부분 문제 정의를 써서 풀 수 있는 경우가 많음
+  * 위 수열 S의 최대 증가 부분 수열을 찾는 재귀 함수 lis3()의 정의는 `lis3(start) == S[start]에서 시작하는 최대 증가 부분 수열의 길이` 였음
+* 입력 수열이 늘었으니 재귀 함수도 두 개의 입력을 받아야 함
+  * jlis(indexA, indexB) = A\[indexA\]와 B\[indexB\] 에서 시작하는 합친 증가 부분 수열의 최대 길이
+  * 두 수의 순서는 지정하지 않았으므로 A\[indexA\]와 B\[indexB\] 중 작은 쪽이 앞에 옴
+    * 이 증가 부분 수열의 다음 숫자는 A\[indexA+1\] 이후 혹은 B\[indexB+1\] 이후의 수열 중 max(A\[indexA\], B\[indexB\]) 보다 큰 수 중 하나가 됨
+    * A\[nextA\]를 다음 수자로 선택했을 경우 합친 증가 부분 수열의 최대 길이는 1+jlis(nextA, indexB)가 됨
+* 점화식은 p238 참고
+
+```c++
+// code 8.13
+// 입력이 32비트 부호 있는 정수의 모든 값을 가질 수 있으므로 인위적인 최소치는 64비트여야 함
+const long long NEGINF = nemeric_limits<long long>::min();
+int n, m, A[100], B[100];
+int cache[101][101];
+
+// min(A[indexA], B[indexB]), max(A[indexA], B[indexB])로 시작하는 합친 부분 증가 수열의 최대 길이를 반환
+// 단, indexA == indexB == -1 혹은 A[indexA] != B[indexB]라고 가정
+int jlis(int indexA, int indexB) {
+  // 메모이제이션
+  int& ret = cache[indexA+1][indexB+1];
+  if (ret != -1)
+    return ret;
+
+  // A[indexA], B[indexB]가 이미 존재하므로 2개는 항상 있음
+  ret = 2;
+
+  long long a = (indexA == -1 ? NEGINF : A[indexA]);
+  long long b = (indexB == -1 ? NEGINF : B[indexB]);
+  long long maxElement = max(a, b);
+
+  // 다음 원소를 찾음
+  for (int nextA = indexA + 1; nextA < n; ++nextA)
+    if (maxElement < A[indexA])
+      ret = max(ret, jlis(nextA, indexB) + 1); 
+  for (int nextB = indexB + 1; nextB < n; ++nextB)
+    if (maxElement < A[indexB])
+      ret = max(ret, jlis(indexA, nextB) + 1);
+
+  return ret;
+}
+```
+
+### 8.7 문제 : 원주율 외우기 p239 참고
+
+* 원주율의 일부가 입력으로 주어질 때 숫자들을 세 자리에서 다섯 자리까지 끊어 최소의 난이도를 계산하는 문제
+  * 난이도는 p240 표 참고
 ### 8.8 풀이 : 원주율 외우기
 
+* 입력의 크기를 보면 완전 탐색은 불가능
+  * 적절한 완전 탐색 알고리즘을 만들면 메모이제이션으로 해결가능
+* 수열을 쪼개는 모든 방법을 하나씩 만들어 보고 그 중 난이도의 합이 가장 작은 조합을 찾아내는 완전 탐색 알고리즘으로 풀 수 있음
+  * 각 재귀 함수는 한 번 불릴 때마다 첫 조각의 길이를 하나하나 시도하며 남은 수열을 재귀적으로 쪼갬
+  * 3,4,5 세 개의 부분 문제에 대한 최적해를 각각 구했다고 하면, 전체 문제의 최적해는 다음 세 경우 중 가장 작은 값이 됨
+
+> 길이 3인 조각의 난이도 +3글자 빼고 나머지 수열에 대한 최적해
+> 
+> 길이 4인 조각의 난이도 +4글자 빼고 나머지 수열에 대한 최적해
+> 
+> 길이 5인 조각의 난이도 +5글자 빼고 나머지 수열에 대한 최적해
+
+* 나머지 수열의 최적해를 구할 때 앞의 부분은 어떤 식으로 쪼갰는지 중요하지 않음(최적 부분 구조가 성립)
+* p242 점화식 참고
+
+#### 구현
+
+* 숫자 한 조각이 주어졌을 때 난이도를 판정하는 classify()와 실제 메모이제이션을 구현하는 memorize()로 나뉨
+
+```c++
+// code 8.14
+const int INF = 987654321;
+string N;
+
+// N[a..b] 구간의 난이도를 반환하는 classify
+int classify(int a, int b) {
+  // 숫자 조각을 가져옴
+  string M = N.substr(a, b-a+1);
+
+  // 첫 글자만으로 이루어진 문자열과 같으면 난이도는 1
+  if (M == string(M.size(), M[0])) return 1;
+
+  // 등차 수열인지 검사
+  bool progressive =true;
+  for (int i=0; i<M.size(); i++)
+    if (M[i+1] - M[i] != M[1] - M[0])
+      progressive = false;
+  
+  // 등차 수열이고 공차가 1혹은 -1이면 난이도는 2
+  if (progressive && abs(M[1] - M[0]) == 1)
+    return 2;
+
+  // 두 수가 번갈아 등장하는지 확인
+  bool alternating = true;
+  for (int i=0; i<M.size(); i++)
+    if (M[i] != M[i%2])
+      alternating = false;
+  
+  if (alternating) return 4; // 두 수가 번갈아 등장하면 난이도 4
+  if (progressive) return 5; // 공차가 1이 아닌 등차 수열 난이도 5
+  return 10; // 이 외는 모두 난이도 10
+}
+
+int cache[10002];
+// 수열 N[begin..]를 외우는 방법 중 난이도의 최소 합을 출력
+int memorize(int begin) {
+  // base case, 수열의 끝에 도달한 경우
+  if (begin == N.size())
+    return 0;
+
+  // 메모이제이션
+  int& ret = cache[begin];
+  if (ret != -1)
+    return ret;
+
+  ret = INF;
+
+  for (int L = 3; L <= 5; L++)
+    if (begin + L <= N.size())
+      ret = min(ret, memorize(begin + L)
+                      + classify(begin, begin + L - 1));
+  
+  return ret;
+}
+```
