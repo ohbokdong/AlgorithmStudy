@@ -32,16 +32,16 @@ int bino2(int n, int r) {
   if(cache[n][r] != -1)
     return cache[n][r];
   // 직접 계산한 뒤 배열에 저장
-  return cache[n][r] = bino2(n--1, r-1) + bino2(n-1, r);
+  return cache[n][r] = bino2(n-1, r-1) + bino2(n-1, r);
 }
 ```
 
-### 메모제이션을 적용할 수 있는 경우
+### 메모이제이션을 적용할 수 있는 경우
 - 참조적 투명성(referential transparency): 함수의 반환 값이 그 입력 값만으로 결정되는 지 여부
-- 창조적 투명함수(referential transparent function): 입력이 고정되어 있을 때 그 결과가 항상 같은 함수들   
-메모제이션은 `참조적 투명 함수`의 경우에만 `적용할 수 있습니다`.(캐싱)
+- 참조적 투명함수(referential transparent function): 입력이 고정되어 있을 때 그 결과가 항상 같은 함수들   
+메모이제이션은 `참조적 투명 함수`의 경우에만 `적용할 수 있습니다`.(캐싱)
 
-### 메모제이션 구현 패턴
+### 메모이제이션 구현 패턴
 ```C++
 // a와 b는 각각 [0, 2500) 구간 안의 정수
 // 반환 값은 항상 int형 안에 들어가는 음이 아닌 정수
@@ -88,7 +88,7 @@ jump(y,x) = (y,x)에서부터 맨 마지막 칸까지 도달할 수 있는지 �
 게임판의 (y,x) 위치에 있는 수를 jumpSize라고 하면,   
 아래쪽으로 뛸 경우: jump(y+jumpSize, x)   
 오른쪽으로 뛸 경우: jump(y, x+jumpSize)로 표현
-`jump(y,x) = jump(y+jumpSize, x) || jump(y,x+jumpSize)
+`jump(y,x) = jump(y+jumpSize, x) || jump(y,x+jumpSize)`
 
 ```C++
 // 외발 뛰기 문제를 해결하는 재귀 호출 알고리즘
@@ -103,7 +103,7 @@ bool jump(int y, int x) {
 }
 ```
 
-> #### 메모제이션 적용하기
+> #### 메모이제이션 적용하기
 완전 탐색이 만드는 경로의 수는 엄청나게 많지만, jump()에 주어지는 입력의 개수는 100*100 = 10,000개 뿐이라는 것.   
 비둘기집의 원리(비둘기집 원리는 n+1개의 물건을 n개의 상자에 넣을 때 적어도 어느 한 상자에는 두 개 이상의 물건이 들어 있다는 원리를 말한다.)에 의해 중복으로 해결되는 부분 문제들이 항상 존재함을 알 수 있음.   
 
@@ -230,7 +230,6 @@ int lis(const vector<int>& A) {
     for(int j = i+1; j<A.size(); ++j)
       if(A[i] < A[j])
         B.push_back(A[j]);
-    // 왜 1 + lis(B)일까요?
     ret = max(ret, 1 + lis(B));
   }
 }
