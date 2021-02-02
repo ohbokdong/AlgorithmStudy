@@ -34,7 +34,7 @@
       * [sgmsgood](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week2/sgmsgood.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week2/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week2/ch.choi.md)
-  * **3회차(2020-01-02) - 4. 알고리즘의 시간 복잡도 분석**
+  * **3회차(2021-01-02) - 4. 알고리즘의 시간 복잡도 분석**
     * [sgmsgood(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week3/sgmsgood.md)
     * [rlawjddbs(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week3/rlawjddbs.md)
     * [프로그래머스 문제풀이 - Summer/Winter Coding(~2018)(예산)](https://programmers.co.kr/learn/courses/30/lessons/12982)    
@@ -49,7 +49,7 @@
       * [sgmsgood]()
       * [rlawjddbs]()
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/ch.choi-2.md)
-  * **4회차(2020-01-10) - 6. 무식하게 풀기**
+  * **4회차(2021-01-10) - 6. 무식하게 풀기**
     * [ch.choi(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week4/ch.choi.md)
     * [sgmsgood(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week4/sgmsgood.md)
     * [프로그래머스 문제풀이 - 월간 코드 챌린지 시즌1(두 개 뽑아서 더하기)](https://programmers.co.kr/learn/courses/30/lessons/68644)
@@ -58,7 +58,7 @@
       * [sgmsgood](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/sgmsgood.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week4/ch.choi.md)
-  * **5회차(2020-01-24) - 7. 분할 정복**
+  * **5회차(2021-01-24) - 7. 분할 정복**
     * [rlawjddbs(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/rlawjddbs.md)
     * [ch.choi(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week5/ch.choi.md)
     * [프로그래머스 문제풀이 - 월간 코드 챌린지 시즌1(쿼드압축 후 개수 세기)](https://programmers.co.kr/learn/courses/30/lessons/68936)
@@ -66,7 +66,7 @@
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week5/minj0i.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week5/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week5/ch.choi.md)
-  * **6회차(2020-01-31) - 8. 동적 계획법**
+  * **6회차(2021-01-31) - 8. 동적 계획법 1/2**
     * [minj0i(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week6/minj0i.md)
     * [younggeun0(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week6/younggeun0.md)
     * [프로그래머스 문제풀이 - N으로 표현](https://programmers.co.kr/learn/courses/30/lessons/42895)
@@ -74,30 +74,38 @@
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/minj0i.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/ch.choi.md)
-  * **7회차(2020-?) - 18. 선형 자료 구조**
-    * [younggeun0(정)]()
-    * [minj0i(부)]()
-  * **8회차(2020-?) - 19. 큐와 스택, 데크**
+  * **7회차(2021-02-7) - 8. 동적 계획법 2/2**
+    * [younggeun0(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week6/minj0i.md)
+    * [minj0i(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week6/younggeun0.md)
+    * [프로그래머스 문제풀이 - N으로 표현](https://programmers.co.kr/learn/courses/30/lessons/42895)
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/younggeun0.md)
+      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/minj0i.md)
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/rlawjddbs.md)
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/ch.choi.md)
+  * **8회차(2021-?) - 18. 선형 자료 구조**
     * [rlawjddbs(정)]()
     * [ch.choi(부)]()
-  * **9회차(2020-?) - 21. 트리의 구현과 순회**
+  * **9회차(2021-?) - 19. 큐와 스택, 데크**
     * [ch.choi(정)]()    
     * [rlawjddbs(부)]()
-  * **10회차(2020-?) - 22. 이진 검색 트리**
+  * **10회차(2021-?) - 21. 트리의 구현과 순회**
     * [minj0i(정)]()
     * [younggeun0(부)]()  
-  * **11회차(2020-?) - 23. 우선순위 큐와 힙**
+  * **11회차(2021-?) - 22. 이진 검색 트리**
     * [younggeun0(정)]()
     * [minj0i(부)]()
-  * **12회차(2020-?) - 27. 그래프의 표현과 정의**
+  * **12회차(2021-?) - 23. 우선순위 큐와 힙**
     * [rlawjddbs(정)]()
     * [ch.choi(부)]()
-  * **13회차(2020-?) - 28. 그래프의 깊이 우선 탐색**
+  * **13회차(2021-?) - 27. 그래프의 표현과 정의**
     * [ch.choi(정)]()    
     * [rlawjddbs(부)]()
-  * **14회차(2020-?) - 29. 그래프의 너비 우선 탐색**
+  * **14회차(2021-?) - 28. 그래프의 깊이 우선 탐색**
     * [minj0i(정)]()
     * [younggeun0(부)]()  
-  * **15회차(2020-?) - 30. 최단 경로 알고리즘**
+  * **15회차(2021-?) - 29. 그래프의 너비 우선 탐색**
     * [younggeun0(정)]()
     * [minj0i(부)]()
+  * **16회차(2021-?) - 30. 최단 경로 알고리즘**
+    * [rlawjddbs(정)]()
+    * [ch.choi(부)]()
