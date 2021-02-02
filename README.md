@@ -75,13 +75,8 @@
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/ch.choi.md)
   * **7회차(2021-02-7) - 8. 동적 계획법 2/2**
-    * [younggeun0(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week6/minj0i.md)
-    * [minj0i(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week6/younggeun0.md)
-    * [프로그래머스 문제풀이 - N으로 표현](https://programmers.co.kr/learn/courses/30/lessons/42895)
-      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/younggeun0.md)
-      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/minj0i.md)
-      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/rlawjddbs.md)
-      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/ch.choi.md)
+    * [younggeun0(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week7/minj0i.md)
+    * [minj0i(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week7/younggeun0.md)
   * **8회차(2021-?) - 18. 선형 자료 구조**
     * [rlawjddbs(정)]()
     * [ch.choi(부)]()
