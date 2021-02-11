@@ -50,4 +50,4 @@ function solution(N, number) {
 }
 ```
 
-![]()
+![img1](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week6/img/young1.png?raw=true)
