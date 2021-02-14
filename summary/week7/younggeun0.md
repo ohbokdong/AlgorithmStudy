@@ -330,6 +330,6 @@ int asymmetric2(int width) {
 
 #### 스캐폴딩으로 테스트하기
 
-* [스캐폴딩(Scaffolding)]()
+* [스캐폴딩(Scaffolding)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week2/younggeun0.md)
 * 이 문제는 입력을 생성하기 쉽고, 느리지만 정답임을 확실히 알 수 있는 알고리즘이 존재하기 때문에 스캐폴딩을 통해 테스트하기 적절할 문제
   * 1~20 정도의 값을 입력해서 결과를 확인
