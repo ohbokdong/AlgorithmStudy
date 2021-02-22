@@ -70,3 +70,42 @@ int climb(int days, int climbed) {
 a) 모든 경우는 이 선택지들에 포함됨 b) 어떤 경우도 두 개 이상의 선택지에 포함되지 않음
 2. 이전 조각에서 결정한 요소들에 대한 입력을 없애거나 변형해서 줄인다.
 3. 메모이제이션을 적용
+
+## 8.12 문제: 비대칭 타일링
+2xn 크기의 직사각형을 2x1 크기의 타일로 채우려고 한다. 겹치지 않고 좌우대칭을 뺀 경우의 수 구하기.
+n이 주어질 때 방법의 수가 매우 크다면, 1,000,000,007로 나눈 나머지 출력
+
+## 8.13 풀이
+**완전 탐색의 함정**
+이 문제는 완전 탐색보다 전체 수 - 대칭 타일링 으로 구하면 됨
+```C++
+// 코드 8.19 비대칭 타일링 문제를 해결하는 동적 계획법 알고리즘
+// 2*width 크기의 사각형을 채우는 비대칭 방법의 수를 반환한다.
+int asymmetric(int width) {
+  if(width % 2 = 1)
+    return (tiling(width) - tiling(width/2) + MOD) % MOD;
+  int ret = tiling(width);
+  ret = (ret - tiling(width/2) + MOD) % MOD;
+  ret = (ret - tiling(width/2-1) + MOD) % MOD;
+  return ret;
+}
+```
+
+**직접 비대칭 타일링 수 세기**
+```C++
+// 코드 8.20 직접 비대칭 타일링의 수를 세는 동적 계획법 알고리즘
+int cache2[101];
+// 2*width 크기의 사각형을 채우는 비대칭 방법의 수를 반환한다.
+int aymmetric2(int width) {
+  // 기저 사례: 너비가 2 이하인 경우
+  if(width <= 2) return 0;
+  // 메모이제이션
+  int& ret = cache2[width];
+  if(ret != -1) return ret;
+  ret = asymmetric2(width-2) % MOD;
+  ret = (ret + asymmetric(width-4)) % MOD;
+  ret = (ret + tiling(width-3)) % MOD;
+  ret = (ret + tiling(width-3)) % MOD;
+  return ret;
+}
+```
