@@ -82,9 +82,9 @@
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week7/minj0i.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week7/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week7/ch.choi.md)
-  * **8회차(2021-?) - 18. 선형 자료 구조**
-    * [rlawjddbs(정)]()
-    * [ch.choi(부)]()
+  * **8회차(2021-03-07) - 18. 선형 자료 구조**
+    * [rlawjddbs(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week8/rlawjddbs.md)
+    * [ch.choi(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week8/ch.choi.md)
   * **9회차(2021-?) - 19. 큐와 스택, 데크**
     * [ch.choi(정)]()    
     * [rlawjddbs(부)]()
