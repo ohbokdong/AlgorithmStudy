@@ -1,7 +1,8 @@
 # [4차] 두 개 뽑아서 더하기
+- 이게 푼게 맞나...?
 ```java
 public static int[] solution(int[] numbers) {
-        
+
     TreeSet<Integer> set = new TreeSet<Integer>();
     
     for(int i = 0, n = numbers.length; i < n; i++) {
