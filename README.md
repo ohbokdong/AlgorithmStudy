@@ -47,7 +47,7 @@
       * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/younggeun0-2.md)
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/minj0i-2.md)
       * [sgmsgood]()
-      * [rlawjddbs]()
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/rlawjddbs-2.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week3/ch.choi-2.md)
   * **4회차(2021-01-10) - 6. 무식하게 풀기**
     * [ch.choi(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week4/ch.choi.md)
