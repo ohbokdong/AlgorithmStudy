@@ -134,3 +134,5 @@ function solution(N, number) {
     return answer;
 }
 ```
+
+## 보류.. 
