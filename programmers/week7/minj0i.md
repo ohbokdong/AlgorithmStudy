@@ -4,24 +4,17 @@
 function solution(n, lost, reserve) {
     var answer = 0;
     
-    const realLost = lost.filter(a => !reserve.includes(a))
-    const realReserve = reserve.filter(a => !lost.includes(a))
-    
-    answer = n
+    let realLost = lost.filter(a => !reserve.includes(a))    
+    let realReserve = reserve.filter(a => !lost.includes(a))
     
      realLost.forEach(item => {
-        let copyRealReserve = realReserve
-        for (const a of copyRealReserve) {
-            
-        }
         realReserve.forEach(value => {
-            if (Math.abs(value - item) <= 1) {
-                realLost.splice(realLost.indexOf(item),1)
-                realReserve.splice(realReserve.indexOf(value),1)
+            if (Math.abs(value - item) === 1) {
+                realReserve = realReserve.filter(reserveItem => reserveItem !== value)
+                realLost = realLost.filter(lostItem => lostItem !== item)
             }
         })
     })
-    
     answer = n - realLost.length
     return answer;
 }
