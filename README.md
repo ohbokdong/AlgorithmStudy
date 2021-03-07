@@ -85,7 +85,17 @@
   * **8회차(2021-03-07) - 18. 선형 자료 구조**
     * [rlawjddbs(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week8/rlawjddbs.md)
     * [ch.choi(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week8/ch.choi.md)
-  * **9회차(2021-?) - 19. 큐와 스택, 데크**
+    * [프로그래머스 문제풀이 - 가장 큰 수](https://programmers.co.kr/learn/courses/30/lessons/42746)
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week8/younggeun0-01.md)
+      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week8/minj0i-01.md)
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week8/rlawjddbs-01.md)
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week8/ch.choi-01.md)
+    * [프로그래머스 문제풀이 - 폰켓몬](https://programmers.co.kr/learn/courses/30/lessons/1845)
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week8/younggeun0-02.md)
+      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week8/minj0i-02.md)
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week8/rlawjddbs-02.md)
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week8/ch.choi-02.md)
+  * **9회차(2021-03-21) - 19. 큐와 스택, 데크**
     * [ch.choi(정)]()    
     * [rlawjddbs(부)]()
   * **10회차(2021-?) - 21. 트리의 구현과 순회**
