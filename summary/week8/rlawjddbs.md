@@ -69,6 +69,7 @@ array[size++] = newValue;
 - 자세히 분석해 보면 동적 배열의 재할당에 M을 늘리는 것은 아무런 의미가 없음을 깨달을 수 있음
 - 텅 빈 배열로 시작해서 N번 append() 연산을 할 때 재할당의 수는 ![재할당의 수](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week8/images/CodeCogsEqn1.gif)임
 - 이 때 재할당마다 복사하는 원소의 수는 M개, 2M개, …, K•M개로 증가하므로, 전체 복사하는 원소의 수는 다음과 같음   
+   
 ![전체 복사하는 원소의 수](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week8/images/CodeCogsEqn.gif)   
 - N번의 append() 연산을 하는 데 드는 총 시간이 O(N<sup>2</sup>)이라면 한 번의 append() 연산에 드는 시간은 평균적으로 ![append 연산에 드는 시간](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week8/images/CodeCogsEqn2.gif)이 됨
 - 따라서 이런 재할당 전략으로는 상수 시간에 append()를 구현한다는 우리 목표를 달성할 수 없음
