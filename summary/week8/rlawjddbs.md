@@ -98,7 +98,7 @@ array[size++] = newValue;
             <td>…</td>
             <td>4096</td>
             <td>8192</td>
-            <td>8192</td></tr>
+            <td>16384</td></tr>
     </tbody>
 </table>
 
