@@ -96,8 +96,8 @@
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week8/rlawjddbs-02.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week8/ch.choi-02.md)
   * **9회차(2021-03-21) - 19. 큐와 스택, 데크**
-    * [ch.choi(정)]()    
-    * [rlawjddbs(부)]()
+    * [ch.choi(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week9/ch.choi.md)    
+    * [rlawjddbs(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week9/rlawjddbs.md)
   * **10회차(2021-?) - 21. 트리의 구현과 순회**
     * [minj0i(정)]()
     * [younggeun0(부)]()  
