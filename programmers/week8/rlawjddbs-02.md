@@ -1,6 +1,6 @@
 # [폰켓몬](https://programmers.co.kr/learn/courses/30/lessons/1845)
 - 중복 방지를 위해 `Set` 사용
-- Set의 크기가 가져갈 수 있는 폰켓몬의 최대 수를 넘어서면 `최대수 / 2`를 반환
+- `Set`의 크기가 가져갈 수 있는 폰켓몬의 최대 수를 넘어서면 `최대수 / 2`를 반환
 ```java
 public String solution(int[] numbers) {
     Set<Integer> bag = new TreeSet<Integer>();
@@ -19,7 +19,7 @@ public String solution(int[] numbers) {
 ```
 
 ### 비슷한 정답
-- ArrayList의 `contains` 메서드로 값이 없는 경우에만 `add`
+- `ArrayList`의 `contains` 메서드로 값이 없는 경우에만 `add`
 ```java
 public int solution(int[] nums) {
     //1. 기존 length를 구한다.
