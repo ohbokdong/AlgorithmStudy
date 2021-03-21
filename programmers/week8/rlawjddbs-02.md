@@ -14,7 +14,7 @@ public int solution(int[] numbers) {
         return numbers.length / 2;
     }
 		
-	return bag.size();
+    return bag.size();
 }
 ```
 
