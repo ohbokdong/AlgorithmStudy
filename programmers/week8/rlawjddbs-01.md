@@ -1,5 +1,5 @@
 # [가장 큰 수](https://programmers.co.kr/learn/courses/30/lessons/42746)
-- `Comparator` 인터페이스의 `compare` 사용
+- `Comparator` 인터페이스의 `compare()` 메서드 사용
 - "330"과 "303"의 비교를 통해 더 큰수 비교 후 정렬
 - "00..." 인 경우 그냥 0 이므로 "0" 반환
 ```java
