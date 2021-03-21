@@ -94,4 +94,73 @@ function solution(numbers) {
 
 ## 3차 시도 
 
-* 
+* **망함**
+  * 첫번째 자리수 뒤에 수들까지 모두 비교할 수 있을지 감이 안와서 다른 풀이 참고
+* **민정이 풀이 분석**
+  * 설명 부탁
+
+```js
+function solution(numbers) {
+    var answer = '';
+    
+    const sorted = numbers.sort((a, b) => {
+        a = a + "" + b;
+        b = b + "" + a;
+        
+        if (a > b) return -1;
+        if (a < b) return 1;
+        return 0;
+    });
+    
+    answer = sorted.reduce((a, b) => a+''+b);
+    if ([...numbers][0] == "0") answer = "0";
+
+    return answer;
+}
+```
+
+* [프로그래머스 강좌 "파이썬을 무기로, 코딩테스트 광탈을 면하자!"에 나온 풀이법](https://gurumee92.tistory.com/161)
+  * numbers의 값은 0이상 1000이하에서 착안
+
+```js
+// numbers가 아래와 같다면
+numbers = [3, 33, 34, 35];
+
+// numbers의 값을 문자열로 바꾼 뒤 반복해 큰 수를 만들고 4자리까지 자름
+["3333333...", "3333333...", "3434343...", "3535353..."]
+
+// 만들어진 문자열을 기준으로 역순으로 numbers 정렬
+["3333", "3333", "3434", "3535"]
+// 3535 > 3434 > 3333 == 3333
+
+["3", "33", "34", "35"]
+// 35 > 34 > 33 == 3
+3534333
+```
+
+```js
+function solution(numbers) {
+    var answer = '';
+
+    const sorted = numbers.sort((a, b) => {
+        let tmpA = a + '';
+        tmpA = tmpA + tmpA + tmpA + tmpA;
+        tmpA = tmpA.substr(0,4);
+        
+        let tmpB = b + '';
+        tmpB = tmpB + tmpB + tmpB + tmpB;
+        tmpB = tmpB.substr(0,4);
+        
+        if (tmpA > tmpB) {
+            return -1;
+        } else if (tmpA < tmpB) {
+            return 1;
+        }
+    });
+    
+    answer = sorted.reduce((a, b) => a+''+b);
+    if ([...numbers][0] == "0") answer = "0";
+
+    return answer;
+}
+```
