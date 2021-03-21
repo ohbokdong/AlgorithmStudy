@@ -118,8 +118,9 @@ array[size++] = newValue;
     - 정확한 수행 시간은 삽입이나 삭제 위치에 따라 다르지만, 평균적인 경우 이 작업들에는 원소의 개수에 `선형 비례`하는 시간이 걸림
 - 이와 같은 문제를 해결하기 위해 고안된 자료 구조가 `연결 리스트(linked list)`로, 특정 위치에서의 삽입과 삭제를 `상수 시간`에 할 수 있게 해 줌
 - 연결리스트는 배열과 아주 다른 형태를 가지고 있음
-    - 배열에서는 메모리의 연속된 위치에 각 원소들이 저장되어 있다면, 연결 리스트는 원소들이 메모리 여기 저기 흩어져 있고 각 원소들이 **이전과 다음 원소를 가리키는 포인터**를 가지고 있는 방식으로 구현됨
-![배열과 연결 리스트의 차이](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week8/images/appendOperation.png)   
+    - 배열에서는 메모리의 연속된 위치에 각 원소들이 저장되어 있다면, 연결 리스트는 원소들이 메모리 여기 저기 흩어져 있고 각 원소들이 **이전과 다음 원소를 가리키는 포인터**를 가지고 있는 방식으로 구현됨   
+   
+![배열과 연결 리스트의 차이](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week8/images/array_linkedList.png)   
 ```C++
 struct ListNode {
     int element; // 담고 있는 원소
