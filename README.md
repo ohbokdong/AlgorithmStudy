@@ -98,6 +98,11 @@
   * **9회차(2021-03-21) - 19. 큐와 스택, 데크**
     * [ch.choi(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week9/ch.choi.md)    
     * [rlawjddbs(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week9/rlawjddbs.md)
+    * [프로그래머스 문제풀이 - 프린터](https://programmers.co.kr/learn/courses/30/lessons/42587)
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week9/younggeun0.md)
+      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week9/minj0i.md)
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week9/rlawjddbs.md)
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week9/ch.choi.md)
   * **10회차(2021-?) - 21. 트리의 구현과 순회**
     * [minj0i(정)]()
     * [younggeun0(부)]()  
