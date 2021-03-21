@@ -2,7 +2,7 @@
 - 중복 방지를 위해 `Set` 사용
 - `Set`의 크기가 가져갈 수 있는 폰켓몬의 최대 수를 넘어서면 `최대수 / 2`를 반환
 ```java
-public String solution(int[] numbers) {
+public int solution(int[] numbers) {
     Set<Integer> bag = new TreeSet<Integer>();
 		
     for(int num : nums) {
@@ -10,8 +10,8 @@ public String solution(int[] numbers) {
     }
     
     // 고를 수 있는 폰켓몬의 최대 수를 넘어선 경우
-    if (bag.size() > nums.length / 2) {
-        return nums.length / 2;
+    if (bag.size() > numbers.length / 2) {
+        return numbers.length / 2;
     }
 		
 	return bag.size();
