@@ -107,13 +107,22 @@ int height(TreeNode* oot) {
   * 전위 순회(Preorder Traverse)
     * 맨 처음에 트리의 루트를 방문, 왼쪽과 오른쪽 서브트리를 순서대로 방문
     * F -> B -> A -> D -> C -> E -> G -> I -> H
+
+<p align="center"><img src="https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week10/img/pre.png?raw=true"></p>
+
   * 중위 순회(Inorder Traverse)
     * 왼쪽 서브트리 먼저 방문, 루트 방문, 오른쪽 서브트리 방문
       * 왼쪽과 서브트리 사이에 트리의 루트를 방문
     * A -> B -> C -> D -> E -> F -> G -> H -> I
+
+<p align="center"><img src="https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week10/img/inorder.png?raw=true"></p>
+
+
   * 후위 순회(Postorder Traverse)
     * 왼쪽 서브트리, 오른쪽 서브트리 먼저 방문 후 루트 방문
     * A -> C -> E -> D -> B -> H -> I -> G -> F
+    * 
+<p align="center"><img src="https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week10/img/post.png?raw=true"></p>
 
 ### 트리 순회 순서 변경(문제 ID : TRAVERSAL)
 
