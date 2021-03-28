@@ -106,6 +106,16 @@
   * **10회차(2021-?) - 21. 트리의 구현과 순회**
     * [minj0i(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week10/minj0i.md)
     * [younggeun0(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week10/younggeun0.md)  
+    * [프로그래머스 문제풀이 - H-Index](https://programmers.co.kr/learn/courses/30/lessons/42747)
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/younggeun0-01.md)
+      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/minj0i-01.md)
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/rlawjddbs-01.md)
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/ch.choi-01.md)
+    * [프로그래머스 문제풀이 - 스킬트리](https://programmers.co.kr/learn/courses/30/lessons/49993)
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/younggeun0-02.md)
+      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/minj0i-02.md)
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/rlawjddbs-02.md)
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/ch.choi-02.md)
   * **11회차(2021-?) - 22. 이진 검색 트리**
     * [younggeun0(정)]()
     * [minj0i(부)]()
