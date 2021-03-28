@@ -6,7 +6,8 @@
   * 우선순위 값이 높은 프린트 항목들을 먼저 인쇄한다고 계산
     * location 우선순위가 가장 큰 경우 order++가 되는 경우가 없어 0, return 1처리
   * 우선순위 값이 높은 프린트가 될 때 그 앞에 있던 항목들이 뒤로 이동한 것을 location에 빼서 이동시킴
-  * 뭐가 문제지..
+  * ~~뭐가 문제지..~~
+    * priorities 배열의 크기가 변하지 않기 때문에 location이 가리키는 값이 정상적이지 않은 듯 함
 
 ```javascript
 function solution(priorities, location) {
