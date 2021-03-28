@@ -44,6 +44,41 @@ function solution(priorities, location) {
     let printed = false;
 
     while(!printed) {
+        const priority = priorities.shift();
+
+        let bMoreImportExists = false;
+        for (let i=0; i<priorities.length; i++) {
+            if (priorities[i] > priority) {
+                bMoreImportExists = true;
+            }
+        }
+
+        if (bMoreImportExists) {
+            priorities.push(priority);
+        } else {
+            order++;
+            if (location == 0) {
+                printed = true;
+                continue;
+            }
+        }
+
+        if (location == 0) {
+            location = priorities.length - 1;
+        } else {
+            location--;
+        }
+    }
+
+    return order;
+}
+
+// 민정이 풀이
+function solution(priorities, location) {
+    let order = 0;
+    let printed = false;
+
+    while(!printed) {
         const first = priorities.shift();
 
         if (priorities.filter(v => v > first).length > 0) {
