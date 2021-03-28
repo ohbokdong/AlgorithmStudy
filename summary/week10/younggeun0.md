@@ -158,7 +158,7 @@ vector<int> slice(const vector<int>& v, int a, int b) { // 배열을 서브트�
 }
 
 // 트리의 전위탐색 결과와 중위탐색 결과가 주어질 때 후위탐색 결과를 출력
-voide printPostOrder(const vector<int>& preorder, const vector<int>& indorer) {
+void printPostOrder(const vector<int>& preorder, const vector<int>& indorer) {
   // 트리에 포함된 노드의 수
   const int N = preorder.size();
   // 기저 사례: 텅 빈 트리면 곧장 종료
