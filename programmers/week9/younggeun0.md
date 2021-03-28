@@ -12,7 +12,7 @@
 function solution(priorities, location) {
     let order = 0;
     const locaPriority = priorities[location];
-    let tmpLength = priorities.length;
+    let printQueLen = priorities.length;
     let moveCnt = 0;
     for (let i=0; i<priorities.length; i++) {
         const priority = priorities[i];
@@ -20,9 +20,9 @@ function solution(priorities, location) {
         moveCnt++;
         if (priority > locaPriority) {
             order++;
-            tmpLength--;
+            printQueLen--;
             location -= moveCnt;
-            if (location < 0) location += tmpLength;
+            if (location < 0) location += printQueLen;
             moveCnt = 0;
         }
     }
