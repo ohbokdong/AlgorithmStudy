@@ -33,3 +33,38 @@ function solution(priorities, location) {
 }
 // 망..
 ```
+
+## 바닐라 자바스크립트 뻐큐머겅..
+
+* 민정이 풀이를 보며 역시 사람은 배워야되는구나.. ES6 공부해야겠다 다짐합니다.😭
+
+```js
+function solution(priorities, location) {
+    let order = 0;
+    let printed = false;
+
+    while(!printed) {
+        const first = priorities.shift();
+
+        if (priorities.filter(v => v > first).length > 0) {
+            priorities.push(first);
+        } else {
+            order++;
+
+            if (location == 0) {
+                printed = true;
+                continue;
+            }
+        }
+
+        if (location == 0) {
+            location = priorities.length - 1;
+        } else {
+            location--;
+        }
+    }
+
+    return order;
+}
+
+```
