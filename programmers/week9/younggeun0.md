@@ -47,12 +47,14 @@ function solution(priorities, location) {
     while(!printed) {
         const priority = priorities.shift();
 
+        //// filter로 간단히 끝낼 수 있다니..
         let bMoreImportExists = false;
         for (let i=0; i<priorities.length; i++) {
             if (priorities[i] > priority) {
                 bMoreImportExists = true;
             }
         }
+        ////
 
         if (bMoreImportExists) {
             priorities.push(priority);
