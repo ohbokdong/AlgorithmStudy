@@ -27,9 +27,9 @@ function solution(priorities, location) {
         }
     }
 
-    if (order == 0) return 1; // locaPriority가 가장 큰 경우
+    if (order == 0) return 1;
     order += location + 1;
     return order;
 }
-}
+// 망..
 ```
