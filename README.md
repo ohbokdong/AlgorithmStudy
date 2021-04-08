@@ -118,19 +118,19 @@
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/ch.choi-02.md)
   * **11회차(2021-?) - 22. 이진 검색 트리**
     * [younggeun0(정)]()
-    * [minj0i(부)]()
+    * [rlawjddbs(부)]()
   * **12회차(2021-?) - 23. 우선순위 큐와 힙**
     * [rlawjddbs(정)]()
-    * [ch.choi(부)]()
+    * [minj0i(부)
   * **13회차(2021-?) - 27. 그래프의 표현과 정의**
-    * [ch.choi(정)]()    
-    * [rlawjddbs(부)]()
+    * [minj0i(정)]()    
+    * [younggeun0(부)]()
   * **14회차(2021-?) - 28. 그래프의 깊이 우선 탐색**
-    * [minj0i(정)]()
-    * [younggeun0(부)]()  
-  * **15회차(2021-?) - 29. 그래프의 너비 우선 탐색**
     * [younggeun0(정)]()
+    * [rlawjddbs(부)]()  
+  * **15회차(2021-?) - 29. 그래프의 너비 우선 탐색**
+    * [rlawjddbs(정)]()
     * [minj0i(부)]()
   * **16회차(2021-?) - 30. 최단 경로 알고리즘**
-    * [rlawjddbs(정)]()
-    * [ch.choi(부)]()
+    * [minj0i(정)]()
+    * [younggeun0(부)]()
