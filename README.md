@@ -9,11 +9,16 @@
     * **정리 담당자가 md 발표, 학습내용 복습**
     
 * **정리 순번(정, 부)**
-1. minj0i, younggeun0
-2. younggeun0, minj0i
-3. ~~sgmsgood~~, rlawjddbs, ch.choi
-4. ch.choi, ~~sgmsgood~~, rlawjddbs
-5. ch.choi, minj0i
+~~1. minj0i, younggeun0
+2. younggeun0, minj0i   
+~~3. sgmsgood, rlawjddbs, ch.choi
+4. ch.choi, sgmsgood, rlawjddbs
+~~5. ch.choi, minj0i~~
+
+1. minj0i, younggeun0   
+2. younggeun0, rlawjddbs   
+3. rlawjddbs, minj0i   
+
 
 * **학습 내용**
   * **1회차(2020-12-13) - 2. 문제해결 전략**
