@@ -124,7 +124,7 @@
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/ch.choi-02.md)
   * **11회차(2021-?) - 22. 이진 검색 트리**
     * [younggeun0(정)]()
-    * [rlawjddbs(부)]()
+    * [rlawjddbs(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week11/rlawjddbs.md)
   * **12회차(2021-?) - 23. 우선순위 큐와 힙**
     * [rlawjddbs(정)]()
     * [minj0i(부)]()
