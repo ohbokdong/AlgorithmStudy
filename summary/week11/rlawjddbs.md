@@ -37,3 +37,101 @@
     - 트리의 구조에 추가적인 제약을 정하고 이 제약이 만족되도록 노드들을 옮겨서 트리의 높이가 항상 `O(lgN)`이 되도록 유지
     - 대표적인 예로 `레드-블랙 트리(red-black tree)`가 있음
 
+## 22.4 ~ 22.5 문제: 너드인가, 너드가 아닌가? 2
+- 알고스팟 온라인 채점 시스템에서 푼 문제의 수 p
+- 밤 새면서 지금까지 끓여먹은 라면 그릇 수 q
+- 참가 신청자 a의 문제 수 p<sub>a</sub>와 그릇 수 q<sub>a</sub>를 다른 참가 신청자 b의 문제 수 p<sub>b</sub>와 그릇 수 q<sub>b</sub>에 각각 비교 했을 때
+p<sub>b</sub> \< p<sub>a</sub>, q<sub>b</sub> \< p<sub>a</sub> 라면 참가 신청자 a의 참가 자격을 박탈시키는... 문제
+```C++
+// 코드 22.1 ~ 22.2
+// 22.1 한 점이 다른 점에 지배당하는지 확인하는 함수
+// 현재 다른 점에 지배당하지 않는 점들의 목록을 저장
+// coords[x] = y
+map<int, int> coords;
+// 새로운 점 (x, y)가 기존의 다른 점들에 지배당하는지 확인
+bool isDominated(int x, int y) {
+    // x보다 오른쪽에 있는 점 중 가장 왼쪽에 있는 점을 찾는다.
+    map<int, int>::iterator it = coords.lower_bound(x);
+    // 그런 점이 없으면 (x, y)는 지배당하지 않음
+    if(it == coords.end()) return false;
+    // 이 점은 x보다 오른쪽에 있는 점중 가장 위에 있는 점이므로,
+    // (x, y)가 어느 점에 지배되려면 이 점도 지배되어야 한다.
+    return y < it -> second;
+}
+
+// 22.2 지배되는 점들을 삭제하는 함수
+// 새로운 점 (x, y)에 지배당하는 점들을 트리에서 지움
+void removeDominated(int x, int y) {
+    map<int, int>::iterator it = coords.lower_bound(x);
+    // (x, y)보다 왼쪽에 있는 점이 없다면
+    if(it == coords.begin()) return;
+    --it;
+    // 반복문 불변식: it는 (x, y)의 바로 왼쪽에 있는 점
+    while(true) {
+        // (x, y) 바로 왼쪽에 오는 점을 찾음
+        // it가 표시하는 점이 (x, y)에 지배되지 않는다면 곧장 종료
+        if(it -> second > y) break;
+        // 이전 점이 더 없으므로 it만 지우고 종료한다.
+        if (it == coords.begin()) {
+            coords.erase(it);
+            break;
+        } 
+        // 이전 점으로 이터레이터를 하나 옮겨 놓고 it를 지운다.
+        else {
+            map<int, int>::iterator jt = it;
+            --jt;
+            coords.erase(it);
+            it = jt;
+        }
+    }
+
+}
+
+// 새 점 (x, y)가 추가되었을 때 coords를 갱신하고
+// 다른 점에 지배당하지 않는 점들의 개수를 반환한다.
+int registered(int x, int y) {
+    // (x, y)가 이미 지배당하는 경우에는 그냥 (x, y)를 버린다.
+    if(ifDominated(x, y)) return coords.size();
+    // 기존에 있던 점중 (x, y)에 지배당하는 점들을 지운다.
+    removeDominated(x, y);
+    coords[x] = y;
+    return coords.size();
+}
+```
+### 시간 복잡도
+- `isDominated()` : 이진 검색 트리에서의 탐색이 지배하기 때문에 `O(lgN)`
+- `removeDominated()` : 한 점은 최대 한 번만 지워질 수 있기 때문에 `N-1`
+- 따라서 전체 시간 복잡도는 `O(NlgN)`
+
+## 22.6 균형 잡힌 이진 검색 트리 직접 구현하기: 트립
+### 트립의 정의
+- 입력이 특정 순서로 주어질 때 그 성능이 떨어진다는 이진 검색 트리의 단점을 해결하기 위해 고안된 일종의 랜덤화된 이진 검색 트리
+- 트리의 형태가 원소들의 추가 순서에 따라 결정되지 않고 난수에 의해 임의대로 결정됨
+
+### 트립의 구현
+```C++
+// 코드 22.3 트립의 노드를 표현하는 객체의 구현
+
+typedef int KeyType;
+// 트립의 한 노드를 저장
+struct Node {
+    // 노드에 저장된 원소
+    KeyType key;
+    // 이 노드의 우선순위(priority)
+    // 이 노드를 루트로 하는 서브트리의 크기 (size)
+    int priority, size;
+    // 두 자식 노드의 포인터
+    Node *left, *right;
+    // 생성자에서 난수 우선순위를 생성하고, size와 left/right를 초기화한다.
+    Node(const keyType& _key) : key(_key), priority(rand()), size(1), left(NULL), right(NULL) {
+    }
+    void setLeft(Node* newLeft) { left = newLeft; calcSize(); }
+    void setRight(Node* newRight) { right = newRight; calcSize(); }
+    // size 멤버를 갱신한다.
+    void calcSize() {
+        size = 1;
+        if(left) size += left -> size;
+        if(right) size += right -> size;
+    }
+}
+```
