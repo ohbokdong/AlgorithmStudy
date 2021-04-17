@@ -19,7 +19,7 @@
   * 각 노드의 왼쪽 서브트리에는 해당 노드의 원소보다 작은 원소를 가진 노드들이, 오른쪽 서브트리에는 보다 큰 원소를 가진 노드들이 들어감
   * 이진 검색트리에서 원하는 값을 찾는 과정은 배열에서의 이진 탐색과 비슷
 
-![bst](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week11/img/bst.png?raw=true)
+<p align="center"><img src="https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week11/img/bst.png?raw=true"></p>
 
 * **순회**
 	* 이진 검색 트리(BST)를 중위 순회하면 크기 순서로 정렬된 원소의 목록을 얻을 수 있음
