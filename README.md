@@ -122,8 +122,8 @@
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/minj0i-02.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/rlawjddbs-02.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week10/ch.choi-02.md)
-  * **11회차(2021-?) - 22. 이진 검색 트리**
-    * [younggeun0(정)]()
+  * **11회차(2021-04-18) - 22. 이진 검색 트리**
+    * [younggeun0(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week11/younggeun0.md)
     * [rlawjddbs(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week11/rlawjddbs.md)
   * **12회차(2021-?) - 23. 우선순위 큐와 힙**
     * [rlawjddbs(정)]()
