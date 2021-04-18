@@ -265,7 +265,7 @@ struct Node {
 			* (c) - key보다 작은 원소를 갖는 트리를 root의 오른쪽 자손으로 연결하면 key 보다 작은 원소를 갖는 트리와 key 보다 큰 원소를 갖는 트리로 원래 트리가 쪼개짐
 
 
-<p align="center"><img src="https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week11/img/image3.png?raw=true"></p>
+<p align="center"><img src="https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week11/img/Image3.png?raw=true"></p>
 
 ```c++
 // code 22.4 트립에서의 노드 추가와 트립 쪼개기 연산의 구현
