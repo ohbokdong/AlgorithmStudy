@@ -181,6 +181,18 @@ runningMedian도 시간 복잡도는 O(NlgN).
 
 ### 수열 생성하기
 
-```C++
+입력의 양이 많을 때는 난수 생성기를 통해 입력  
+연산 과정에서 정수 오버플로우가 나지 않도록 64비트 정수 캐스팅도 눈여겨 보기
 
+```C++
+// 코드 23.5 변화하는 중간 값 문제의 입력 생성하기
+struct RNG {
+  int seed, a, b;
+  RNG(int _a, int _b) : a(_a), b(_b), seed(1983) {}
+  int next() {
+    int ret = seed;
+    seed = ((seed * (long long)a) + b) % 20090711;
+    return ret;
+  }
+}
 ```
