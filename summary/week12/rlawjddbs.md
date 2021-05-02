@@ -48,7 +48,7 @@
 - 힙이 요구하는 굉장히 엄격한 모양 규칙은 힙 구현 시 장점으로 작용
     - 트리에 포함된 노드의 개수만 알면 트리 전체의 구조를 알 수 있음
 - 대부분의 힙 구현은 이 점을 최대한 이용, **배열 하나로 전체 트리를 표현함**   
-![힙의 노드들을 배열의 원소와 일대일 대응하기](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week12/images/btree_breaks_the_rules.jpeg)   
+![힙의 노드들을 배열의 원소와 일대일 대응하기](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week12/images/node_mapping_to_element.jpeg)   
 - 위 그림 (a)처럼 텅 빈 힙에 원소를 삽입하면 맨 윗 레벨의 왼쪽 끝부터 노드들이 순서대로 추가됨
 - 원소가 들어가는 순서대로 일차원 배열 A[]의 각 원소와 힙의 노드들을 일대일 대응해보면 (b)를 얻을 수 있음
     - A\[i\]에 대응되는 노드의 왼쪽 자손은 A\[2 X i + 1\]에 대응됨
@@ -62,7 +62,7 @@ vector<int> heap;
 ```
 
 ### 새 원소의 삽입
-![힙에서 원소의 삽입 과정](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week12/images/node_mapping_to_element.jpeg)   
+![힙에서 원소의 삽입 과정](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week12/images/insert_of_heap.png)   
 1. 루트가 가진 원소와 새 원소 비교
 2. 둘 중 더 큰 원소가 루트를 차지하고 다른 원소가 아래로 밀려 내려감
 ```C++
@@ -126,3 +126,104 @@ void pop_heap(vector<int>& heap) {
     - 이미 큐에 들어 있는 어느 작업의 우선순위가 높아졌을 때 변경된 원소를 위로 올려주는 방식으로 구현(새 원소 삽입과 비슷)
     - 위 작업을 위해 각 원소가 힙의 어디에 위치하는지를 별도의 배열에 유지해야 하는 등 구현이 번거로워 대부분의 표준 라이브러리에서 지원하지 않음
 
+## 23.3 문제: 변화하는 중간 값
+- 한 수열의 중간 값(median)은 이 수열을 정렬했을 때 가운데 오는 값
+- 예를 들어 {3, 1, 5, 4, 2}를 정렬했을 때 가운데 오는 값은 3
+- 수열의 길이가 **짝수일 때는 가운데 있는 두 값 중 보다 작은 것을 수열의 중간 값**이라고 정의
+- 한 수열의 중간 값은 수열에 새로운 수가 추가될 때마다 바뀔 수 있음
+- 텅 빈 수열에서 시작해서 각 수가 추가될 때마다 중간 값을 계산하는 프로그램을 작성하는 문제
+
+### 입력 생성
+- 입력의 크기가 큰 관계로, 이 문제에서는 수열을 입력받는 대신 다음과 같은 식을 통해 프로그램 내에서 직접 생성함
+```
+A[0] = 1983
+A[i] = (A[i-1] x a + b) mod 20090711
+```
+- a와 b는 입력에 주어지는 상수이며 이 문제의 해법은 입력을 생성하는 방식과는 아무 상관이 없음
+
+### 입력
+- 입력 파일의 첫 줄에는 테스트 케이스의 수 C(1 ≤ C ≤ 20)가 주어지고, 그 후 C줄에 각 세 개의 정수로 수열의 길이 N(1 ≤ N ≤ 200,000), 그리고 수열을 생성하는 데 필요한 두 정수 
+a, b(0 ≤ a, b ≤ 10000)가 주어짐
+
+### 출력
+- 각 테스트 케이스마다 한 줄에 N개의 중간 값의 합을 20090711로 나눈 나머지를 출력함
+
+### 예제 입력
+```
+3
+10 1 0
+10 1 1
+10000 1273 4936
+```
+
+### 예제 출력
+```
+19830
+19850
+2448920
+```
+
+## 23.4 풀이: 변화하는 중간 값
+- `균형잡힌 이진 검색 트리`를 사용하여 해결가능
+- 22.6절에서 사용한 트립을 사용하면 새 원소를 추가하는 작업과 k번째 원소를 찾는 작업을 모두 `O(lgN)`에 할 수 있음
+- 단, `트립 구현 코드`를 작성해야 하므로 균형 잡힌 이진 검색 트리를 직접 구현하기가 영 귀찮음
+
+```C++
+// 코드 23.3 변화하는 중간 값 문제를 트립을 사용해 풀기
+
+// mg가 생성하는 첫 n개의 난수를 수열에 추가하며 중간 값을 구함
+int runningMedian(int n, RNG rng) {
+    Node* root = NULL;
+    int ret = 0;
+    for(int cnt = 1; cnt <= n; ++cnt) {
+        root = insert(root, new Node(rng.next()));
+        int median = kth(root, (cnt + 1) / 2) -> key;
+        ret = (ret + median) % 20090711;
+    }
+    return ret;
+}
+```
+
+### 이진 검색 트리를 사용하지 않고 문제 풀기
+- 주어진 수열의 숫자들을 두 묶음으로 나누어 풀 수 있음
+- 숫자들을 정렬한 뒤 앞의 절반을 최대 합에, 뒤의 절반을 최소 합에 넣도록 함
+- 수열의 길이가 홀수라면 최대 힙에 숫자를 하나 더 넣음
+```
+// 위 과정을 요약한 불변식
+1. 최대 힙의 크기는 최소 힙의 크기와 같거나, 하나 더 크다.
+2. 최대 힙의 최대 원소는 최소 힙의 최소 원소보다 작거나 같다
+```
+- 위 불변식으로 문제를 풀면 이 수열의 중간 값은 항상 최대 힙의 루트에 있게 됨
+- 이 불변식들은 새로운 숫자가 추가되었을 때에도 간단히 유지할 수 있음
+
+```C++
+// 코드 23.4 힙을 이용해 변화하는 중간 값 문제를 해결하는 함수의 구현
+
+int runningMedian(int n, RNG rng) {
+    priority_queue<int, vector<int>, less<int> > maxHeap;
+    priority_queue<int, vector<int>, greater<int> > minHeap;
+    int ret = 0;
+    // 반복문 불변식
+    // 1. maxHeap의 크기는 minHeap의 크기와 같거나 1 더 큼
+    // 2. maxHeap.top() <= minHeap.top()
+    for(int cnt = 1; cnt <= n; ++cnt) {
+        // 우선 1번 불변식부터 만족시킴
+        if(maxHeap.size() == minHeap.size())
+            maxHeap.push(rng.next());
+        else
+            minHeap.push(rng.next());
+        // 2번 불변식이 깨졌을 경우 복구
+        if(!minHeap.empty() && !maxHeap.empty() && minHeap.top() < maxHeap.top()) {
+            int a = maxHeap.top(), b = minHeap.top();
+            maxHeap.pop(); minHeap.pop();
+            maxHeap.push(b);
+            minHeap.push(a);
+        }
+        ret = (ret + maxHeap.top()) % 20090711;
+    }
+    return ret;
+}
+```
+- `runningMedian()`의 시간 복잡도 또한 `O(NlgN)`
+    - for문 내부의 수행 시간을 힙의 추가와 삭제 연산이 지배하고 있기 때문
+    - 시간 복잡도는 같지만, 힙은 대개 배열로 구현되기 때문에 노드들을 접근하기 위해 포인터를 따라가야 하는 트립보다 훨씬 빠름
