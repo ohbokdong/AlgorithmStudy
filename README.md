@@ -136,7 +136,7 @@
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week11/rlawjddbs-02.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week11/ch.choi-02.md)
   * **12회차(2021-04-25) - 23. 우선순위 큐와 힙**
-    * [rlawjddbs(정)]()
+    * [rlawjddbs(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week12/rlawjddbs.md)
     * [minj0i(부)]()
   * **13회차(2021-?) - 27. 그래프의 표현과 정의**
     * [minj0i(정)]()    
