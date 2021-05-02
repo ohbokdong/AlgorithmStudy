@@ -69,7 +69,7 @@ vector<int> heap;
 // 코드 23.1 정수 원소를 갖는 최대 힙에 새 원소 삽입
 
 // 정수를 담는 최대 힙 heap에 새 원소 newValue 삽입
-void push heap(vector<int>& heap, int newValue) {
+void push_heap(vector<int>& heap, int newValue) {
     // 힙의 맨 끝에 newValue 삽입
     heap.push_back(newValue);
     // 현재 newValue의 위치
