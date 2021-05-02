@@ -138,6 +138,11 @@
   * **12회차(2021-04-25) - 23. 우선순위 큐와 힙**
     * [rlawjddbs(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week12/rlawjddbs.md)
     * [minj0i(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week12/minj0i.md)
+    * [프로그래머스 문제풀이 - 124 나라의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12899)
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/younggeun0-01.md)
+      * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/minj0i-01.md)
+      * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/rlawjddbs-01.md)
+      * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/ch.choi-01.md)
   * **13회차(2021-?) - 27. 그래프의 표현과 정의**
     * [minj0i(정)]()    
     * [younggeun0(부)]()
