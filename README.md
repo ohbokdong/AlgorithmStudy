@@ -143,9 +143,9 @@
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/minj0i-01.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/rlawjddbs-01.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/ch.choi-01.md)
-  * **13회차(2021-?) - 27. 그래프의 표현과 정의**
-    * [minj0i(정)]()    
-    * [younggeun0(부)]()
+  * **13회차(2021-05-09) - 27. 그래프의 표현과 정의**
+    * [minj0i(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week13/minj0i.md)    
+    * [younggeun0(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week13/younggeun0.md)
   * **14회차(2021-?) - 28. 그래프의 깊이 우선 탐색**
     * [younggeun0(정)]()
     * [rlawjddbs(부)]()  
