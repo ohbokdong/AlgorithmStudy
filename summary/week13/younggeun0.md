@@ -8,7 +8,7 @@
 * 그래프 G(V, E) 는 어떤 자료나 개념을 표현하는 정점(Vertex)들의 집합 V와 이들을 연결하는 간선(Edge)들의 집합 E로 구성된 자료 구조
 * 그래프는 정점들과 간선들로 정의하며, 정점의 위치 정보나 간선의 순서 등은 그래프의 정의에 포함되지 않음
 
-![graph_example](https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png)
+<p align="center"><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/undirectedgraph.png"></p>
 
 ### 그래프의 종류
 
@@ -40,8 +40,8 @@
   * 방향 그래프인데 한 점에서 출발해 자기 자신으로 돌아오는 경로(사이클)가 존재하지 않는 그래프
   * 간선의 방향을 무시할 경우 DAG에는 사이클이 존재할 수도 있음
 
-![graphs](https://beenpow.github.io/img/2020-01-01-Jongman-ch27-1-1.png)
 
+<p align="center"><img src="https://beenpow.github.io/img/2020-01-01-Jongman-ch27-1-1.png"></p>
 
 
 ### 그래프의 경로(Path) 
