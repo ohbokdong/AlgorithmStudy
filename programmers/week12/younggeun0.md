@@ -3,9 +3,7 @@
 ## 이게 왜 되지..
 
 
-<p align="center"><img src="https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/img/young01.png" style="max-width:40%;"></p>
-
-<p align="center"><img src="https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/img/young02.png" style="max-width:40%;"></p>
+<p align="center"><img src="https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/img/young01.png"></p>
 
 ```js
 function solution(n) {
