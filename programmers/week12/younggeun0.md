@@ -1,5 +1,11 @@
 # [124 나라의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12899#)
 
+## 이게 왜 되지..
+
+![망](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/img/young01.png)
+
+![이게 왜 되지..](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/img/young02.png)
+
 ```js
 function solution(n) {
     var answer = '';
