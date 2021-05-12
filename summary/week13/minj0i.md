@@ -31,7 +31,7 @@
 경로: 끝과 끝이 서로 연결된 간선들을 순서대로 나열한 것
 
 - 단순 경로(simple path): 한 정점을 최대 한 번만 지나는 경로
-- 사이클 / 회로: 시작한 점에서 끝나는 경론
+- 사이클 / 회로: 시작한 점에서 끝나는 경로
 
 ## 27.2 그래프의 사용 예
 
@@ -47,8 +47,8 @@
 
 ### 인터넷 전송 속도 계산 => 최소 스패닝 트리 알고리즘
 
-인터넷에 연결된 라우터와 컴퓨터 - 정점
-두 기계 연결 케이블 - 간선
+인터넷에 연결된 라우터와 컴퓨터 - 정점      
+두 기계 연결 케이블 - 간선   
 
 ### 한 붓 그리기 => 오일러 경로(Eulerian path), 깊이 우선 탐색
 
@@ -108,11 +108,13 @@ struct Edge {
 vector<vector<bool> > adjacent;
 ```
 
-adjacent[i, j]는 정점 i에서 j로 가는 간선이 있는 지 나타내는 불린 값 변수로 존재한다면 어떤 정수나 실수, 없다면 -1 혹은 아주 큰 값 등 존재할 수 없는 값으로 지정
+adjacent[i, j]는 정점 i에서 j로 가는 간선이 있는 지 나타내는 불린 값   
+변수로 존재한다면 어떤 정수나 실수,   
+없다면 -1 혹은 아주 큰 값 등 존재할 수 없는 값으로 지정
 
 ### 인접 행렬 표현과 인접 리스트 표현의 비교
 
-![비교](https://lh3.googleusercontent.com/proxy/6_gGYiFGLiXmZ9JpH75uX_RE0EsbPbcJ16OpDita7Hye6e-UOpxwnM12t0z4w0yA6VvhyRtkE8zN7xMUCYk4S7yxbdthSINmmJqWiIGzCkDyn12OubwCYAHjGnGa_QQESaEY8H0Ovo8v4xvzvvtQi5C1uQ-srF8EBDCQq2YNEIIeYXorON09PSupNSa7QQqEOF-Vy9VsP2GXgaUd_Q7RwubAk1X1qi-bmoAQOi8cLgPzh4hTGGsZkrZypTBTAgPwll1lwfGMzPJO6lHf9qe1pnT1iDu-px365g5d)
+![비교](https://lh3.googleusercontent.com/proxy/6N5HfzV5UeZNxsW5XTAfkTInY8Bd9Zk_XCoJp2Ia5cIja_D-hOa9cv3HqWawboHrXjR7cLWAlbrnshumJe7hDZ6349YW8Yw0D_Pcyd0SURDxiZFejBI6RlFmVyyKebyfsTm7JtOZqfEnTUc3TUd6rJB1Gw26uIQv7sZAjsSECYuacWfKEMy816yk8d2oIV46XLz1Gu7nzEIQfRbjWNKps4f3qQIzLeelwQU1fk0neXmsY8wpiFvPPMX41AIdY2W0vpIddJroPejbax67b8L4qtn6YMI3PXPCb3EN)
 
 > 인접 행렬 표현
 
