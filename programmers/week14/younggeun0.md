@@ -11,15 +11,15 @@ function solution(arr1, arr2) {
     for (var nRowIdx=0; nRowIdx < nRowNum; nRowIdx++) {
         var row = arr1[nRowIdx];
         var newRow = [];
-        var value = 0;
+        var sum = 0;
 
         // arr1의 열과 arr2 행은 같은 인덱스끼리 곱함(nColIdx1)
         for (var nColIdx2=0; nColIdx2 < nColNum; nColIdx2++) { // nColIdx2는 arr2의 idx
             for (var nColIdx1=0; nColIdx1 < row.length; nColIdx1++) {
-                value += (row[nColIdx1] * arr2[nColIdx1][nColIdx2]);   
+                sum += (row[nColIdx1] * arr2[nColIdx1][nColIdx2]);   
             }
-            newRow.push(value);
-            value = 0;
+            newRow.push(sum);
+            sum = 0;
         }
         answer.push(newRow);
     }
