@@ -41,3 +41,26 @@ function solution(arr1, arr2) {
 ```
 
 왜 안될까?
+
+```js
+function solution(arr1, arr2) {
+  const answer = [];
+  const arr1Length = arr1[0].length;
+  const arr2Length = arr2[0].length;
+
+  for (var i = 0; i < arr1.length; i++) {
+    if (answer[i] == null) answer[i] = [];
+    for (var j = 0; j < arr2Length; j++) {
+      if (answer[i][j] == undefined) answer[i][j] = 0;
+      for (var k = 0; k < arr1Length; k++) {
+        answer[i][j] = answer[i][j] + arr1[i][k] * arr2[k][j];
+      }
+    }
+  }
+  return answer;
+}
+```
+
+fill()로 넣으니 뭔가 계속 복사되는 것 같아서 그냥 무식하게 풀었다
+
+- [MDN - fill()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
