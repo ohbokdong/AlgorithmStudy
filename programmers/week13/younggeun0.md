@@ -9,7 +9,7 @@ function getPlayTime(startTime, endTime) {
     var m = parseInt(endTime[1]) - parseInt(startTime[1]);
 
     if (h != 0) {
-        // m = (60 * h) - m;
+        // m = (60 * h) - m; 빼는게 아님 ㅠㅠ
         m = (60 * h) + m; // 19, 27 틀렸던건 재생시간 계산이 잘못됨..
     }
     return m;
