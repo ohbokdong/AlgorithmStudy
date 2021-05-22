@@ -147,7 +147,7 @@
     * [minj0i(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week13/minj0i.md)     
     * [younggeun0(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week13/younggeun0.md)
     * [프로그래머스 문제풀이 - 방금그곡](https://programmers.co.kr/learn/courses/30/lessons/17683)
-      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week12/younggeun0.md)
+      * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week13/younggeun0.md)
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week13/minj0i.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week13/rlawjddbs.md)
   * **14회차(2021-?) - 28. 그래프의 깊이 우선 탐색**
