@@ -152,7 +152,7 @@
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week13/rlawjddbs.md)
   * **14회차(2021-05-30) - 28. 그래프의 깊이 우선 탐색**
     * [younggeun0(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week14/younggeun0.md)
-    * [rlawjddbs(부)]()  
+    * [rlawjddbs(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week14/rlawjddbs.md)  
     * [프로그래머스 문제풀이 - 행렬의 곱셈](https://programmers.co.kr/learn/courses/30/lessons/12949)
       * [younggeun0](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week14/younggeun0.md)
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week14/minj0i.md)
