@@ -15,7 +15,7 @@
 * **현재 정점과 인접한 간선들을 하나씩 검사하다가 아직 방문하지 않은 정점으로 향하는 간선이 있다면 그 간선을 무조건 따라감**
   * **더 이상 갈 곳이 없는 막힌 정점에 도달하면 마지막에 따라왔던 간선을 따라 뒤로 돌아감**
   * 뒤로 돌아가는 작업을 구현하기 위해선 지금까지 거쳐온 정점들을 모두 저장해 둬야 함
-    * **재귀 호출**을 이용하면 뒤로 돌아가는 작업을 간단히 할 수 있음
+    * **재귀 호출**을 이용하면 뒤로 돌아가는 작업을 간단히 할 수 있음 **(Stack, LIFO)**
 
 ```c++
 // code 28.1 그래프의 깊이 우선 탐색
@@ -254,8 +254,8 @@ vector<int> topologicalSort() {
   * findRandomCircuit()을 깊이 우선 탐색처럼 재귀 호출로 구현하는 것
   * findRandomCircuit(u)는 u와 인접한 간선들을 검사하며 아직 방문하지 않은 간선 (u, v)가 있으면 다시 findRandomCircuit(v)를 호출함
   	* 더 이상 따라갈 간선이 없으면 재귀 호출을 종료하고 반환
-* 재귀 호출이 종료하는 순간, 지금까지 따라온 간선들을 모으면 하나의 서킷이 됨
-  * 재귀 호출의 반환 과정은 지금까지 지나온 정점들을 방문했던 역순으로 하나씩 지나므로, 이 과정에서 지나지 않은 간선이 있으면 새 서킷을 만들어 가운데 끼워 넣도록 함
+* **재귀 호출이 종료하는 순간, 지금까지 따라온 간선들을 모으면 하나의 서킷이 됨**
+  * **재귀 호출의 반환 과정은 지금까지 지나온 정점들을 방문했던 역순으로 하나씩 지나므로, 이 과정에서 지나지 않은 간선이 있으면 새 서킷을 만들어 가운데 끼워 넣도록 함**
 * 아래 구현 코드에는 정점에 따라가지 않은 간선이 남아 있을 때 새 서킷을 만들어서 지금까지 만든 서킷 가운데 끼워넣는 코드가 없음
   * 각 간선을 따라갈 때 경로에 추가하는 것이 아니라, 재귀 호출이 끝나고 반환할 때 추가하기 때문
   * 간선을 따라갈 때마다 getEulerCircuit() 함수를 호출하고 내부에서는 O(V) 반복문을 수행하기 때문에 전체 시간 복잡도는 O(VE)가 됨
@@ -269,17 +269,43 @@ vector<vector<int>> adj;
 
 // 무향 그래프의 인접행렬 adj가 주어질 때 오일러 서킷을 계산
 // 결과로 얻어지는 circuit을 뒤집으면 오일러 서킷이 됨
-
 void getEulerCircuit(int here, vector<int>& circuit) {
     for(int there = 0; there < adj[here].size(); ++there) {
         while(adj[here][there] > 0) {
             adj[here][there]--; // 양쪽 간선을 모두 지움 
-            adj[there][there]--;
+            adj[there][here]--;
             getEulerCircuit(there, circuit);
         }
     }
     circuit.push_back(here); // 현재 정점에서 만들어진 서킷만 저장
 }
+```
+
+```js
+// 0, 1, 2 노드가 circuit을 이루는 경우
+var adj = [
+  [0, 1, 1],
+  [1, 0, 1],
+  [1, 1, 0]
+];
+
+var circuit = [];
+var getEulerCircuit = function(here, circuit) {
+    for(var there = 0; there < adj[here].length; ++there) {
+        while(adj[here][there] > 0) {
+            adj[here][there]--; // 양쪽 간선을 모두 지움 
+            adj[there][here]--;
+            getEulerCircuit(there, circuit);
+        }
+    }
+    circuit.push(here); // 현재 정점에서 만들어진 서킷만 저장
+};
+
+getEulerCircuit(0, circuit);
+console.log(circuit); // [ 0, 2, 1, 0 ];
+
+circuit.reverse();
+console.log(circuit); // [ 0, 1, 2, 0 ];
 ```
 
 ### 오일러 트레일
@@ -290,7 +316,194 @@ void getEulerCircuit(int here, vector<int>& circuit) {
     * 시작점 a, 끝점 b인 오일러 서킷을 찾고, (b, a) 간선을 지워서 서킷을 끊으면 오일러 트레일을 얻을 수 있음
 * **시작점과 끝점을 제외한 모든 점이 짝수점이고 시작점과 끝점은 홀수점**
 
+### 문제 : 단어 제한 끝말잇기
+
+* 단어 제한 끝말잇기는 일반적인 끝말잇기와 달리 사용할 수 있는 단어의 종류가 게임 시작 전에 미리 정해져 있으며, 한 단어를 두 번 사용할 수 없음
+* **단어 제한 끝말잇기에서 사용할 수 있는 단어들의 목록이 주어질 때, 단어들을 전부 사용하고 게임이 끝날 수 있는지, 그럴 수 있다면 어떤 순서로 단어를 사용해야 하는지를 계산하는 프로그램을 작성하는 문제**
+* 시간 및 메모리 제한
+  * 실행 시간 1초, 64MB 메모리
+* 입력
+  * 테스트 케이스 수 C (1<= C <= 50)
+  * 각 테스트 케이스의 첫 줄에는 게임에서 사용할 수 있는 단어의 수 n(1<=n<=100)
+  * 그 후 한 줄에 하나씩 게임에서 사용할 수 있는 n개의 단어가 주어짐
+    * 각 단어는 알파벳 소문자로 구성돼 있으며, 길이는 2 이상 10 이하
+    * 한 테스트 케이스에 두 번 이상 출현하는 단어는 없음 
+* 출력
+  * 각 테스트 케이스마다 한 줄을 출력
+    * 모든 단어를 사용하고 게임이 끝나는 방법이 없다면 "IMPOSSIBLE"을 출력(따옴표 제외)
+    * 방법이 있다면 사용할 단어들을 빈 칸 하나씩을 사이에 두고 순서대로 출력
+      * 방법이 여러개라면 그 중 아무 것이나 출력
 
 
+### 풀이 : 단어 제한 끝말잇기
+
+* **해밀토니안 경로와 오일러 트레일**
+  * 문제를 그래프로 표현하는 가장 직관적인 방법은 입력에 주어진 각 단어를 정점으로 하는 방향 그래프를 만드는 것
+  * 한 단어의 마지막 글자가 다른 단어의 첫 글자와 같다면 두 단어를 연속해서 사용할 수 있으므로 간선을 추가
+    * p844, 그림 28.7 참고
+      * 굵은 경로에 있는 단어들을 순서대로 사용하면 답
+  * **그래프의 모든 정점을 정확히 한 번씩 지나는 경로를 `해밀토니안 경로(Hamiltonian Path)`라고 함**
+    * 해밀토니안 개념은 직관적이지만 큰 그래프에 대한 해밀토니안 경로를 찾는 방법은 아직 고안되지 않음
+    * 해밀토니안 조합을 찾는 유일한 방법은 조합 탐색
+      * 모든 정점의 배열을 하나하나 시도하며 이들이 경로가 되는지 확인하는 것
+        * 최악의 경우 n!
+        * 단어 100개일 때 1초 안에 풀 수 없음
+* **이 문제를 시간안에 푸는 방법은 입력에 주어진 각 단어를 정점이 아닌 간선을 갖는 방향 그래프를 만드는 것**
+  * **그래프의 정점들은 알파벳의 각 글자를 표현하며, 각 단어는 첫 글자에서 마지막 글자로 가는 간선이 됨**
+  * 이 그래프의 오일러 트레일 혹은 오일러 서킷을 찾으면 답
+
+```c++
+// code 28.5 끝말잇기 문제의 입력을 그래프로 만들기
+// 그래프의 인접 행렬 표현, adj[i][j] == i와 j 사이의 간선의 수
+vector<vector<int>> adj;
+
+// graph[i][j] == i로 시작해서 j로 끝나는 단어의 목록
+vector<string> graph[26][26];
+
+// indegree[i] == i로 시작하는 단어의 수 
+// outdegree[i] == i로 끝나는 단어의 수
+vector<int> indegree;
+vector<int> outdegree;
+
+void makeGraph(const vector<string>& words) {
+    // 전역 변수 초기화
+    for (int i=0; i<26; i++)
+        for (int j=0; j<26; j++)
+            graph[i][j].clear();
+
+    adj = vector<vector<int>>(26, vector<int>(26, 0));
+    indegree = vector<int>(26, 0);
+    outdegree = vector<int>(26, 0); 
+
+    // 각 단어를 그래프를 추가한다.
+    for (int i=0; i<words.size(); i++) {
+        int first_alphabet = words[i][0] - 'a';
+        int last_alphabet = words[i][words[i].size()-1] - 'a';
+        graph[first_alphabet][last_alphabet].push_back(words[i]);
+        adj[first_alphabet][last_alphabet]++;
+        outdegree[first_alphabet]++;
+        indegree[last_alphabet]++;
+    }
+}
+```
+
+* **방향 그래프에서의 오일러 서킷**
+  * 이 문제에서 오일러 서킷을 찾을 그래프는 방향 그래프
+  * 방향 그래프에서 오일러 서킷을 찾는 알고리즘은 무향 그래프와 거의 다르지 않지만 오일러 서킷의 존재 조건이 무향 그래프와 다름
+    * 무향 그래프에서는 각 정점에 인접한 간선이 짝수 개여야 했음
+    * **방향 그래프에서 각 간선은 둘 중 한 방향으로만 쓸 수 있기 때문에, 각 정점에 들어오는 간선의 수와 나가는 간선의 수가 같아야만 함**
+      * 간선들의 방향을 무시했을 때 방향 그래프의 정점들이 서로 연결돼 있어야 한다는 의미
+  * a에서 시작하고 b에서 끝나는 오일러 트레일을 찾기 위해서는 간선 (b,a)를 그래프에 추가한 뒤 오일러 서킷을 찾아야 함
+    * 이 때 오일러 서킷의 존재 조건
+      * a에서는 나가는 간선이 들어오는 간선보다 하나 많음
+      * b는 들어오는 간선이 나가는 간선보다 하나 많음
+      * 다른모든 정점에서는 나가는 간선과 들어오는 간선의 수가 같음
+* **오일러 서킷 혹은 트레일**
+  * 이 문제에서 답은 오일러 서킷일수도 트레일일 수도 있음
+  * 오일러 서킷을 찾을지, 트레일을 찾을지 알기 좋은 방법은 각 정점의 차수를 확인하는 것 
+    * 오일러 트레일의 시작점에서는 나가는 간선의 수가 들어오는 간선의 수보다 하나 많음
+    * 이런 정점이 있다면 오일러 트레일
+    * 아니면 오일러 서킷을 찾는 함수를 작성 가능
+
+```c++
+// code 28.6 방향 그래프에서 오일러 서킷 혹은 트레일을 찾아내기
+
+// 유향 그래프의 인접 행렬 adj가 주어질 때 오일러 서킷 혹은 트레일을 계산
+void getEulerCircuit(int here, vector<int>& circuit) {
+    for (int there=0; there<adj.size(); there++) {
+        while(adj[here][there] > 0) {
+            adj[here][there]--; // 간선을 지움, 방향 그래프기 때문에 양쪽 지우지 않음
+            getEulerCircuit(there, circuit);
+        }
+    }
+    circuit.push_back(here);
+}
+
+// 현재 그래프의 오일러 트에리이나 서킷을 반환
+vector<int> getEulerTrailOrCircuit() {
+    vector<int> circuit;
+
+    // 우선 트레일을 찾아봄, 시작점이 존재하는 경우
+    for (int i=0; i<26; i++) {
+        if (outdegree[i] == indegree[i]+1) {
+            getEulerCircuit(i, circuit);
+            return circuit;
+        }
+    }
+
+    // 아니면 서킷이나, 간선에 인접한 아무 접점에서나 시작함
+    for (int i=0; i<26; i++) {
+        if (outdegree[i]) {
+            getEulerCircuit(i, circuit);
+            return circuit;
+        }
+    }
+
+    // 모두 실패한 경우 빈 배열을 반환
+    return circuit;
+}
+```
+
+
+### 오일러 서킷/ 트레일의 존재 여부 확인
+
+* 위처럼 그래프 생성과 오일러 서킷 혹은 트레일을 찾는 코드를 작성하고 나면 나머지는 단순(?)
+  * 오일러 트레일이 존재하는지 확인하고, 존재한다면 출력 문자열을 계산해 반환하기만 하면 됨
+
+```c++
+// code 28.7 끝말잇기 문제를 오일러 트레일 문제로 바꿔 해결하는 알고리즘
+
+// 현재 그래프의 오일러 서킷/트레일의 존재 여부를 확인한다
+bool checkEuler() {
+    // 예비 시작점과 끝점의 수
+    int plus1 = 0;
+    int minus1 = 0;
+
+    for (int i=0; i<26; i++) {
+        int delta = outdegree[i] - indegree[i];
+
+        // 모든 정점의 차수는 -1, 1 또는 0 이어야 함
+        if (delta < -1 || 1 < delta) return false;
+        if (delta == 1) plus1++;
+        if (delta == -1) minus1++;
+    }
+
+    // 방향 그래프에서 오일러 서킷이 있으려면 모든 정점에서 나가는 간선의 수와 들어오는 간선의 수가 같아야 함
+    // 방향 그래프에서 오일러 트레일이 있으려면 나가는 간선이 하나 많은 시작점이 하나, 들어노느 간선이 하나 많은 끝점이 하나 있어야 함
+    
+    // 시작점과 끝점은 각 하나씩 있거나 하나도 없어야 함
+    return (plus1 == 1 && minus1 == 1) || (plus1 == 0 && minus1 == 0);
+}
+
+string solve(const vector<string>& words) {
+    makeGraph(words);
+
+    // 차수가 맞지 않으면 실패
+    if (!checkEuler()) return "IMPOSSIBLE";
+    
+    // 오일러 서킷이나 경로를 찾아냄
+    vector<int> circuit = getEulerTrailOrCircuit();
+
+    // 모든 간선을 방문하지 못했으면 실패 (그래프가 두 개 이상으로 분리돼 있는 경우)
+    if (circuit.size() != words.size() + 1) return "IMPOSSIBLE";
+
+    // 아닌 경우 방문 순서를 뒤집은 뒤 간선들을 모아 문자열로 만들어 반환
+    reverse(circuit.begin(), circuit.end());
+    string ret;
+
+    for (int i=1; i<circuit.size(); i++) {
+        int a = circuit[i-1];
+        int b = circuit[i];
+
+        ret += graph[a][b].back();
+        graph[a][b].pop_back();
+    }
+
+    return ret;
+}
+```
+
+* 이 코드의 시간 복잡도는 오일러 트레일을 찾는 함수에 의해 지배됨
+  * 오일러 트레일을 찾는 함수의 수행 시간은 알파벳의 수 A와 단어의 수 n의 곱에 비례하여 **O(nA)**
 
 
