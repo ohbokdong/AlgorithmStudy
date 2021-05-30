@@ -233,11 +233,11 @@ function dfsAll(graph) {
 }
 
 dfsAll(graph);
-console.log(topological_sort); // [1, 0, 2, 3]
+console.log(topological_sort); // [3, 2, 1, 0]
 
 topological_sort = topological_sort.reverse();
 
-console.log(topological_sort); // [3, 2, 0, 1], 위상 정렬 결과
+console.log(topological_sort); // [0, 1, 2, 3], 위상 정렬 결과
 ```
 
 ![topological_sort_1](https://raw.githubusercontent.com/ohbokdong/AlgorithmStudy/main/summary/week14/topological_sort_1.png)
