@@ -374,7 +374,10 @@ void getEulerCircuit(int here, vector<int>& circuit) {
     }
     circuit.push_back(here); // 현재 정점에서 만들어진 서킷만 저장
 }
+// C++ 싫다..
 ```
+
+![circuit](https://raw.githubusercontent.com/ohbokdong/AlgorithmStudy/main/summary/week14/circuit_1.png))
 
 ```js
 // 0, 1, 2 노드가 circuit을 이루는 경우
