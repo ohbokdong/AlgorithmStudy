@@ -6,7 +6,7 @@ function solution(m, musicinfos) {
 
     const regExp = /\S\#/g; // 영문 + # 에 해당되는 문자를 찾아내는 정규식
 
-    m = m.replace(regExp, function(v) { return v.toLowerCase(); });
+    m = m.replace(regExp, function(v) { return v.substring(0, 1).toLowerCase(); });
 
     musicinfos.forEach(function(info, i) {
 
@@ -25,7 +25,7 @@ function solution(m, musicinfos) {
             diff -= splitInfo[3].length; // 재생시간에서 멜로디 입력된 만큼 차감
         } while (diff > 0); // 재생시간이 소진되기 전까지 반복
 
-        melody = melody.replace(regExp, function(v) { return v.toLowerCase(); });
+        melody = melody.replace(regExp, function(v) { return v.substring(0, 1).toLowerCase(); });
 
         if (melody.indexOf(m) != -1) { // 재생된 멜로디가 찾고자 하는 멜로디와 같다면
             answer.push(splitInfo); // 배열에 저장
