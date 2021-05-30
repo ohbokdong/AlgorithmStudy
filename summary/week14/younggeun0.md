@@ -193,6 +193,52 @@ console.log(dfsAll(graph_matrix));
   * **깊이 우선 탐색을 이용하면 dfsAll()을 수행하며 dfs()가 종료할 때마다 현재 정점의 번호를 기록하여 문제를 쉽게 해결 가능**
     * dfsAll()이 종료한 뒤 기록된 순서를 뒤집으면 위상 정렬 결과를 얻을 수 있음
     * dfs()가 늦게 종료한 정점일수록 정렬 결과의 앞에 옴
+
+![topological_sort_0](https://raw.githubusercontent.com/ohbokdong/AlgorithmStudy/main/summary/week14/topological_sort_0.png)
+
+```js
+var graph = [];
+         // 0, 1, 2, 3 
+graph[0] = [0, 0, 1, 0];
+graph[1] = [0, 0, 1, 1];
+graph[2] = [0, 0, 0, 1];
+graph[3] = [0, 0, 0, 0];
+
+var visited;
+var topological_sort = [];
+
+function dfs(here, graph) {
+    console.log("DFS_visits : " + here);
+    visited[here] = true;
+
+    for (var i=0; i<graph[here].length; i++) {
+        var there = graph[here][i];
+        if (!visited[there])
+            dfs(there, graph);
+    }
+    topological_sort.push(here);
+}
+
+function dfsAll(graph) {
+    visited = [];
+    for (var i=0; i<graph.length; i++)
+        visited.push(false);
+
+    for (var i=0; i<graph.length; i++)
+        if (!visited[i])
+            dfs(i, graph);
+}
+
+dfsAll(graph);
+console.log(topological_sort); // [1, 0, 2, 3]
+
+topological_sort = topological_sort.reverse();
+
+console.log(topological_sort); // [3, 2, 0, 1], 위상 정렬 결과
+```
+
+![topological_sort_1](https://raw.githubusercontent.com/ohbokdong/AlgorithmStudy/main/summary/week14/topological_sort_1.png)
+
 * **귀류법으로 알고리즘의 정당성을 증명가능** (p831 참고)
     * 귀류법이란 어떤 명제가 참임을 직접 증명하는 대신, 그 부정 명제가 참이라고 가정하여 그것의 불합리성을 증명함으로써 원래의 명제가 참인 것을 보여 주는 간접 증명법
     * 간선 (u, v)가 있다고 가정
