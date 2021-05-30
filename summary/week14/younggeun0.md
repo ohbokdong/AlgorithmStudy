@@ -52,6 +52,101 @@ void dfsAll() {
         if (!visited[i])
             dfs(i);
 }
+
+// C++ 싫다..
+```
+
+![dfs_1](https://raw.githubusercontent.com/ohbokdong/AlgorithmStudy/main/summary/week14/dfs_1.png)
+
+```js
+// p828, 그림 28.2 형태로 예제 그래프를 만듦
+// 각 정점을 방문했는지 여부를 나타냄
+var visited;
+
+// dfs()는 아직 방문하지 않은 정점으로 이어지는 간선을 만날 경우 재귀 호출을 통해 해당 정점을 방문함
+// 깊이 우선 탐색을 구현
+function dfs(here, graph) {
+    console.log("DFS_visits : " + here);
+    visited[here] = true;
+
+    // 모든 인접 정점을 순회하면서
+    for (var i=0; i<graph[here].length; i++) {
+        var there = graph[here][i];
+        
+        // 아직 방문한 적이 없다면 방문
+        if (!visited[there])
+            dfs(there, graph);
+    }
+    // 더 이상 방문할 정점이 없으니, 재귀 호출을 종료하고 이전 정점으로 돌아감
+}
+
+// 모든 정점을 방문한다
+function dfsAll(graph) {
+    // visited를 모두 false로 초기화
+    visited = [];
+    for (var i=0; i<graph.length; i++)
+        visited.push(false);
+
+    // 모든 정점을 순회하며 아직 방문한 적 없으면 방문
+    for (var i=0; i<graph.length; i++)
+        if (!visited[i])
+            dfs(i, graph);
+}
+
+
+// 인접 리스트 DFS
+var graph_array = [];
+
+graph_array[0] = [];
+graph_array[0].push(1);
+graph_array[0].push(2);
+
+graph_array[1] = [];
+graph_array[1].push(0);
+graph_array[1].push(2);
+
+graph_array[2] = [];
+graph_array[2].push(1);
+
+graph_array[3] = [];
+graph_array[3].push(0);
+
+graph_array[4] = [];
+graph_array[4].push(6);
+graph_array[4].push(5);
+graph_array[4].push(7);
+
+graph_array[5] = [];
+graph_array[5].push(4);
+graph_array[5].push(6);
+
+graph_array[6] = [];
+graph_array[6].push(4);
+graph_array[6].push(5);
+graph_array[6].push(7);
+
+graph_array[7] = [];
+graph_array[7].push(6);
+graph_array[7].push(4);
+
+console.log(graph_array);
+console.log(dfsAll(graph_array));
+
+
+// 인접 행렬 DFS, 8*8
+var graph_matrix = [];
+                // 0, 1 ,2, 3, 4, 5, 6, 7
+graph_matrix[0] = [0, 1, 0, 1, 0, 0, 0, 0];
+graph_matrix[1] = [1, 0, 1, 0, 0, 0, 0, 0];
+graph_matrix[2] = [0, 1, 0, 0, 0, 0, 0, 0];
+graph_matrix[3] = [1, 0, 0, 0, 0, 0, 0, 0];
+graph_matrix[4] = [0, 0, 0, 0, 0, 1, 1, 1];
+graph_matrix[5] = [0, 0, 0, 0, 1, 0, 1, 0];
+graph_matrix[6] = [0, 0, 0, 0, 1, 1, 0, 1];
+graph_matrix[7] = [0, 0, 0, 0, 1, 0, 1, 0];
+
+console.log(graph_matrix);
+console.log(dfsAll(graph_matrix));
 ```
 
 * **그래프에서는 모든 정점들이 간선을 통해 연결돼 있다는 보장이 없음**
@@ -279,7 +374,10 @@ void getEulerCircuit(int here, vector<int>& circuit) {
     }
     circuit.push_back(here); // 현재 정점에서 만들어진 서킷만 저장
 }
+// C++ 싫다..
 ```
+
+![circuit](https://raw.githubusercontent.com/ohbokdong/AlgorithmStudy/main/summary/week14/circuit_1.png))
 
 ```js
 // 0, 1, 2 노드가 circuit을 이루는 경우
