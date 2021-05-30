@@ -380,12 +380,14 @@ void getEulerCircuit(int here, vector<int>& circuit) {
 ![circuit](https://raw.githubusercontent.com/ohbokdong/AlgorithmStudy/main/summary/week14/circuit_1.png))
 
 ```js
-// 0, 1, 2 노드가 circuit을 이루는 경우
-var adj = [
-  [0, 1, 1],
-  [1, 0, 1],
-  [1, 1, 0]
-];
+// // 5개의 노드가 circuit을 이루는 경우
+var adj = []; 
+        // 0, 1, 2, 3, 4
+adj[0] = [ 0, 1, 1, 0, 0];
+adj[1] = [ 1, 0, 1, 1, 1];
+adj[2] = [ 1, 1, 0, 0, 0];
+adj[3] = [ 0, 1, 0, 0, 1];
+adj[4] = [ 0, 1, 0, 1, 0];
 
 var circuit = [];
 var getEulerCircuit = function(here, circuit) {
@@ -400,10 +402,9 @@ var getEulerCircuit = function(here, circuit) {
 };
 
 getEulerCircuit(0, circuit);
-console.log(circuit); // [ 0, 2, 1, 0 ];
-
+console.log(circuit); // [0, 2, 1, 4, 3, 1, 0]
 circuit.reverse();
-console.log(circuit); // [ 0, 1, 2, 0 ];
+console.log(circuit); // [0, 1, 3, 4, 1, 2, 0]
 ```
 
 ### 오일러 트레일
