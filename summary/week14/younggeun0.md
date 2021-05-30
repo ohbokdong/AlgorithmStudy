@@ -198,11 +198,14 @@ console.log(dfsAll(graph_matrix));
 
 ```js
 var graph = [];
-         // 0, 1, 2, 3 
-graph[0] = [0, 0, 1, 0];
-graph[1] = [0, 0, 1, 1];
-graph[2] = [0, 0, 0, 1];
-graph[3] = [0, 0, 0, 0];
+graph[0] = [];
+graph[0].push(1);
+graph[1] = [];
+graph[1].push(2);
+graph[1].push(3);
+graph[2] = [];
+graph[2].push(3);
+graph[3] = [];
 
 var visited;
 var topological_sort = [];
