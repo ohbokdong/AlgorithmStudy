@@ -46,6 +46,54 @@ vector<int> bfs(int start) {
 }
 ```
 
+```js
+// 오영근 작성
+// JS
+// 인접 리스트 DFS
+var graph_array = [];
+graph_array[0] = [];
+graph_array[0].push(1);
+graph_array[0].push(3);
+
+graph_array[1] = [];
+graph_array[1].push(0);
+graph_array[1].push(2);
+
+graph_array[2] = [];
+graph_array[2].push(1);
+
+graph_array[3] = [];
+graph_array[3].push(0);
+// console.log(graph_array);
+
+function bfs(start, graph) {
+    const discovered = [];
+    const q = [];
+    const order = [];
+
+    // 발견 후 큐에 추가
+    discovered[start] = true;
+    q.push(start);
+
+    while(q.length > 0) { // 큐가 빌 때까지
+        const here = q.shift();
+        // 큐에서 꺼내 순서에 추가
+        order.push(here);
+
+        // 정점에 인접한 정점이 발견되지 않았으면 발견여부 체크 후 큐에 추가
+        for (let i=0; i<graph[here].length; i++) {
+            const there = graph[here][i];
+            if (!discovered[there]) {
+                q.push(there);
+                discovered[there] = true;
+            }
+        }        
+    }
+    return order;
+}
+console.log(bfs(0, graph_array));
+```
+
 깊이 우선 탐색 시 모든 정점이 거치는 순서
 
 1. 아직 발견되지 않은 상태
@@ -71,7 +119,7 @@ vector<int> bfs(int start) {
 ### 너비 우선 탐색과 최단 거리
 
 너비 우선 탐색은 `그래프`에서의 `최단 경로 문제`를 푸는 것에만 사용된다.  
-`최단 경로 문제`는 두 정점을 연결하는 정보 중 가장 길이가 짧은 경로를 찾는 문제다.
+`최단 경로 문제`는 두 정점을 연결하는 경로 중 가장 길이가 짧은 경로를 찾는 문제다.
 
 - 경로의 길이를 경로에 포함된 간선의 갯수라고 정의
 - 모든 정점에 대해 시작점으로부터의 거리 distance[]를 계산하도록 할 수 있음
@@ -124,6 +172,64 @@ vector<int> shortestPath(int v, const vector<int>& parent) {
   reverse(path.begin(), path.end());
   return path;
 }
+```
+```js
+// 오영근 작성
+// JS
+// 인접 리스트 DFS
+var graph_array = [];
+graph_array[0] = [];
+graph_array[0].push(1);
+graph_array[0].push(3);
+
+
+graph_array[1] = [];
+graph_array[1].push(0);
+graph_array[1].push(2);
+
+
+graph_array[2] = [];
+graph_array[2].push(1);
+
+
+graph_array[3] = [];
+graph_array[3].push(0);
+// console.log(graph_array);
+
+function bfs2(start, graph, distance, parent) {
+    const q = [];
+    distance[start] = 0;
+    parent[start] = start;
+
+    q.push(start);
+
+    while (q.length > 0) {
+        const here = q.shift();
+        for (let i=0; i<graph[here].length; i++) {
+            const there = graph[here][i];
+
+            if (distance[there] == -1) { // distance[there]의 값이 0일 경우 false로 인식..
+                q.push(there);
+                distance[there] = distance[here] + 1;
+                parent[there] = here;
+            }
+        }
+    }    
+}
+
+// 길이, 부모값을 -1로 초기화
+let distance = []; // 정점으로부터의 길이를 저장할 배열
+let parent = []; // BST 의 부모값을 저장할 배열
+
+for (let i=0; i<graph_array.length; i++) {
+    distance[i] = -1;
+    parent[i] = -1;
+}
+
+bfs2(0, graph_array, distance, parent);
+
+console.log(distance); // [0, 1, 2, 1]
+console.log(parent); // [0, 0, 1, 0]
 ```
 
 ### 모든 점의 발견
