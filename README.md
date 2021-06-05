@@ -109,7 +109,7 @@
       * [minj0i](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week9/minj0i.md)
       * [rlawjddbs](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week9/rlawjddbs.md)
       * [ch.choi](https://github.com/ohbokdong/AlgorithmStudy/blob/main/programmers/week9/ch.choi.md)
-  * **10회차(2021-?) - 21. 트리의 구현과 순회**
+  * **10회차(2021-03-28) - 21. 트리의 구현과 순회**
     * [minj0i(정)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week10/minj0i.md)
     * [younggeun0(부)](https://github.com/ohbokdong/AlgorithmStudy/blob/main/summary/week10/younggeun0.md)  
     * [프로그래머스 문제풀이 - H-Index](https://programmers.co.kr/learn/courses/30/lessons/42747)
