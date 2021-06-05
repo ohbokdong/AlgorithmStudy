@@ -228,7 +228,20 @@ bfs2(0, graph_array, distance, parent);
 console.log(distance); // [0, 1, 2, 1]
 console.log(parent); // [0, 0, 1, 0]
 ```
+```js
+// 오영근 작성
+function shortestPath(v, parent) {
+    const path = [];
+    path.push(v);
+    while(parent[v] != v) {
+        v = parent[v];
+        path.push(v);
+    }
+    return path.reverse();
+}
 
+console.log(shortestPath(2, parent));
+```
 ### 모든 점의 발견
 
 대개 시작점으로부터 다른 정점들까지의 거리를 구하기 위해 사용되기 때문에 모든 정점을 검사하면서 탐색을 수행하는 작업은 잘 하지 않음
